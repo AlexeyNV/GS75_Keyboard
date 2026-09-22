@@ -22,6 +22,11 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "matrix.h"
+#include "uart_rx.h"
+#include "keyboard_runtime.h"
+#include "usb_device.h"
+#include "runtime_timing.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -187,7 +192,10 @@ void SysTick_Handler(void)
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-
+  uint32_t runtime_start = RuntimeTiming_Begin();
+  Matrix_Tick();
+  KeyboardRuntime_Tick();
+  RuntimeTiming_End(runtime_start);
   /* USER CODE END SysTick_IRQn 1 */
 }
 
@@ -199,5 +207,13 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /* USER CODE BEGIN 1 */
+void OTG_FS_IRQHandler(void)
+{
+  UsbDevice_IRQHandler();
+}
 
+void USART1_IRQHandler(void)
+{
+  UartRx_IRQHandler();
+}
 /* USER CODE END 1 */

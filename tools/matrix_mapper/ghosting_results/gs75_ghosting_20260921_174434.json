@@ -1,0 +1,2013 @@
+{
+  "format_version": 1,
+  "created_local": "2026-09-21T17:44:34",
+  "source_map": "gs75_matrix_20260921_172228.json",
+  "serial": {
+    "port": "COM17",
+    "baud": 115200
+  },
+  "matrix": {
+    "rows": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "cols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      25,
+      26
+    ],
+    "single_key_count": 102,
+    "rectangle_count": 1246,
+    "candidate_test_count": 4984
+  },
+  "selected_tests": [
+    {
+      "rectangle_id": 934,
+      "rows": [
+        20,
+        24
+      ],
+      "cols": [
+        10,
+        16
+      ],
+      "rectangle_keys": [
+        "X",
+        "|\\",
+        "Left Ctrl",
+        "U"
+      ],
+      "pressed_keys": [
+        "X",
+        "Left Ctrl",
+        "U"
+      ],
+      "omitted_key": "|\\",
+      "omitted_coord": [
+        20,
+        16
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 714,
+      "rows": [
+        19,
+        23
+      ],
+      "cols": [
+        9,
+        14
+      ],
+      "rectangle_keys": [
+        "Space",
+        "6",
+        "G",
+        "]"
+      ],
+      "pressed_keys": [
+        "Space",
+        "6",
+        "G"
+      ],
+      "omitted_key": "]",
+      "omitted_coord": [
+        23,
+        14
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 1,
+      "rows": [
+        17,
+        18
+      ],
+      "cols": [
+        1,
+        2
+      ],
+      "rectangle_keys": [
+        "Arrow Right",
+        "Arrow Left",
+        "Backspace",
+        "\\"
+      ],
+      "pressed_keys": [
+        "Arrow Right",
+        "Arrow Left",
+        "Backspace"
+      ],
+      "omitted_key": "\\",
+      "omitted_coord": [
+        18,
+        2
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 985,
+      "rows": [
+        21,
+        22
+      ],
+      "cols": [
+        12,
+        26
+      ],
+      "rectangle_keys": [
+        "W",
+        "Esc",
+        "N",
+        "Numpad 5"
+      ],
+      "pressed_keys": [
+        "W",
+        "Esc",
+        "N"
+      ],
+      "omitted_key": "Numpad 5",
+      "omitted_coord": [
+        22,
+        26
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 896,
+      "rows": [
+        20,
+        23
+      ],
+      "cols": [
+        13,
+        25
+      ],
+      "rectangle_keys": [
+        "A",
+        "Fn",
+        "T",
+        "Enter"
+      ],
+      "pressed_keys": [
+        "A",
+        "Fn",
+        "Enter"
+      ],
+      "omitted_key": "T",
+      "omitted_coord": [
+        23,
+        13
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 50,
+      "rows": [
+        17,
+        19
+      ],
+      "cols": [
+        3,
+        6
+      ],
+      "rectangle_keys": [
+        "Arrow Up",
+        "5",
+        "Scroll Lock",
+        "7"
+      ],
+      "pressed_keys": [
+        "Arrow Up",
+        "5",
+        "7"
+      ],
+      "omitted_key": "Scroll Lock",
+      "omitted_coord": [
+        19,
+        3
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 332,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        7,
+        8
+      ],
+      "rectangle_keys": [
+        "Right AltGr",
+        "Right Shift",
+        "Left Alt",
+        "Left Shift"
+      ],
+      "pressed_keys": [
+        "Right AltGr",
+        "Left Alt",
+        "Left Shift"
+      ],
+      "omitted_key": "Right Shift",
+      "omitted_coord": [
+        17,
+        8
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 308,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        4,
+        5
+      ],
+      "rectangle_keys": [
+        "Arrow Down",
+        "1",
+        "L",
+        "O"
+      ],
+      "pressed_keys": [
+        "Arrow Down",
+        "1",
+        "L"
+      ],
+      "omitted_key": "O",
+      "omitted_coord": [
+        24,
+        5
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 419,
+      "rows": [
+        18,
+        21
+      ],
+      "cols": [
+        11,
+        15
+      ],
+      "rectangle_keys": [
+        "R",
+        "9",
+        "Q",
+        "F3"
+      ],
+      "pressed_keys": [
+        "R",
+        "9",
+        "Q"
+      ],
+      "omitted_key": "F3",
+      "omitted_coord": [
+        21,
+        15
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 349,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        14,
+        26
+      ],
+      "rectangle_keys": [
+        "4",
+        "Tab",
+        "I",
+        "Y"
+      ],
+      "pressed_keys": [
+        "4",
+        "Tab",
+        "I"
+      ],
+      "omitted_key": "Y",
+      "omitted_coord": [
+        24,
+        26
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 350,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        15,
+        16
+      ],
+      "rectangle_keys": [
+        "3",
+        "2",
+        "J",
+        "U"
+      ],
+      "pressed_keys": [
+        "3",
+        "2",
+        "J"
+      ],
+      "omitted_key": "U",
+      "omitted_coord": [
+        24,
+        16
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 448,
+      "rows": [
+        18,
+        22
+      ],
+      "cols": [
+        8,
+        16
+      ],
+      "rectangle_keys": [
+        "C",
+        "8",
+        "M",
+        "Numpad 3 PgDn"
+      ],
+      "pressed_keys": [
+        "C",
+        "8",
+        "M"
+      ],
+      "omitted_key": "Numpad 3 PgDn",
+      "omitted_coord": [
+        22,
+        16
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 1240,
+      "rows": [
+        23,
+        24
+      ],
+      "cols": [
+        7,
+        26
+      ],
+      "rectangle_keys": [
+        "V",
+        "[",
+        "Left Alt",
+        "Y"
+      ],
+      "pressed_keys": [
+        "V",
+        "Left Alt",
+        "Y"
+      ],
+      "omitted_key": "[",
+      "omitted_coord": [
+        23,
+        26
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 548,
+      "rows": [
+        19,
+        20
+      ],
+      "cols": [
+        10,
+        25
+      ],
+      "rectangle_keys": [
+        "Z",
+        "Win",
+        "X",
+        "Fn"
+      ],
+      "pressed_keys": [
+        "Z",
+        "Win",
+        "Fn"
+      ],
+      "omitted_key": "X",
+      "omitted_coord": [
+        20,
+        10
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 375,
+      "rows": [
+        18,
+        19
+      ],
+      "cols": [
+        9,
+        14
+      ],
+      "rectangle_keys": [
+        "F",
+        "0",
+        "Space",
+        "6"
+      ],
+      "pressed_keys": [
+        "F",
+        "0",
+        "6"
+      ],
+      "omitted_key": "Space",
+      "omitted_coord": [
+        19,
+        9
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 1135,
+      "rows": [
+        22,
+        23
+      ],
+      "cols": [
+        13,
+        25
+      ],
+      "rectangle_keys": [
+        "B",
+        "Numpad Enter",
+        "T",
+        "Enter"
+      ],
+      "pressed_keys": [
+        "B",
+        "T",
+        "Enter"
+      ],
+      "omitted_key": "Numpad Enter",
+      "omitted_coord": [
+        22,
+        25
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 338,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        8,
+        10
+      ],
+      "rectangle_keys": [
+        "Right Shift",
+        "Right Ctrl",
+        "Left Shift",
+        "Left Ctrl"
+      ],
+      "pressed_keys": [
+        "Right Shift",
+        "Right Ctrl",
+        "Left Ctrl"
+      ],
+      "omitted_key": "Left Shift",
+      "omitted_coord": [
+        24,
+        8
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 763,
+      "rows": [
+        19,
+        24
+      ],
+      "cols": [
+        5,
+        6
+      ],
+      "rectangle_keys": [
+        "Insert",
+        "7",
+        "O",
+        "K"
+      ],
+      "pressed_keys": [
+        "7",
+        "O",
+        "K"
+      ],
+      "omitted_key": "Insert",
+      "omitted_coord": [
+        19,
+        5
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 287,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        2,
+        3
+      ],
+      "rectangle_keys": [
+        "Arrow Left",
+        "Arrow Up",
+        "H",
+        "P"
+      ],
+      "pressed_keys": [
+        "Arrow Left",
+        "H",
+        "P"
+      ],
+      "omitted_key": "Arrow Up",
+      "omitted_coord": [
+        17,
+        3
+      ],
+      "manual_penalty": 0
+    },
+    {
+      "rectangle_id": 818,
+      "rows": [
+        20,
+        21
+      ],
+      "cols": [
+        11,
+        26
+      ],
+      "rectangle_keys": [
+        "D",
+        "`",
+        "Q",
+        "Esc"
+      ],
+      "pressed_keys": [
+        "D",
+        "Q",
+        "Esc"
+      ],
+      "omitted_key": "`",
+      "omitted_coord": [
+        20,
+        26
+      ],
+      "manual_penalty": 0
+    }
+  ],
+  "baseline": {
+    "edges": [],
+    "matching_samples": 10,
+    "sample_count": 10
+  },
+  "results": [
+    {
+      "status": "captured",
+      "rectangle_id": 934,
+      "rows": [
+        20,
+        24
+      ],
+      "cols": [
+        10,
+        16
+      ],
+      "rectangle_keys": [
+        "X",
+        "|\\",
+        "Left Ctrl",
+        "U"
+      ],
+      "pressed_keys": [
+        "X",
+        "Left Ctrl",
+        "U"
+      ],
+      "omitted_key": "|\\",
+      "physical_pairs": [
+        "FPC10<->FPC20",
+        "FPC10<->FPC24",
+        "FPC16<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC10->FPC16",
+        "FPC10->FPC20",
+        "FPC10->FPC24",
+        "FPC16->FPC10",
+        "FPC16->FPC20",
+        "FPC16->FPC24",
+        "FPC20->FPC10",
+        "FPC20->FPC16",
+        "FPC20->FPC24",
+        "FPC24->FPC10",
+        "FPC24->FPC16",
+        "FPC24->FPC20"
+      ],
+      "observed_edges": [
+        "FPC10->FPC16",
+        "FPC10->FPC20",
+        "FPC10->FPC24",
+        "FPC16->FPC10",
+        "FPC16->FPC20",
+        "FPC16->FPC24",
+        "FPC20->FPC10",
+        "FPC20->FPC16",
+        "FPC20->FPC24",
+        "FPC24->FPC10",
+        "FPC24->FPC16",
+        "FPC24->FPC20"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Left Ctrl",
+        "U",
+        "X",
+        "|\\"
+      ],
+      "phantom_candidates": [
+        "|\\"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 714,
+      "rows": [
+        19,
+        23
+      ],
+      "cols": [
+        9,
+        14
+      ],
+      "rectangle_keys": [
+        "Space",
+        "6",
+        "G",
+        "]"
+      ],
+      "pressed_keys": [
+        "Space",
+        "6",
+        "G"
+      ],
+      "omitted_key": "]",
+      "physical_pairs": [
+        "FPC09<->FPC19",
+        "FPC14<->FPC19",
+        "FPC09<->FPC23"
+      ],
+      "expected_edges": [
+        "FPC09->FPC14",
+        "FPC09->FPC19",
+        "FPC09->FPC23",
+        "FPC14->FPC09",
+        "FPC14->FPC19",
+        "FPC14->FPC23",
+        "FPC19->FPC09",
+        "FPC19->FPC14",
+        "FPC19->FPC23",
+        "FPC23->FPC09",
+        "FPC23->FPC14",
+        "FPC23->FPC19"
+      ],
+      "observed_edges": [
+        "FPC09->FPC14",
+        "FPC09->FPC19",
+        "FPC09->FPC23",
+        "FPC14->FPC09",
+        "FPC14->FPC19",
+        "FPC14->FPC23",
+        "FPC19->FPC09",
+        "FPC19->FPC14",
+        "FPC19->FPC23",
+        "FPC23->FPC09",
+        "FPC23->FPC14",
+        "FPC23->FPC19"
+      ],
+      "matching_samples": 4,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "6",
+        "G",
+        "Space",
+        "]"
+      ],
+      "phantom_candidates": [
+        "]"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 1,
+      "rows": [
+        17,
+        18
+      ],
+      "cols": [
+        1,
+        2
+      ],
+      "rectangle_keys": [
+        "Arrow Right",
+        "Arrow Left",
+        "Backspace",
+        "\\"
+      ],
+      "pressed_keys": [
+        "Arrow Right",
+        "Arrow Left",
+        "Backspace"
+      ],
+      "omitted_key": "\\",
+      "physical_pairs": [
+        "FPC01<->FPC17",
+        "FPC02<->FPC17",
+        "FPC01<->FPC18"
+      ],
+      "expected_edges": [
+        "FPC01->FPC02",
+        "FPC01->FPC17",
+        "FPC01->FPC18",
+        "FPC02->FPC01",
+        "FPC02->FPC17",
+        "FPC02->FPC18",
+        "FPC17->FPC01",
+        "FPC17->FPC02",
+        "FPC17->FPC18",
+        "FPC18->FPC01",
+        "FPC18->FPC02",
+        "FPC18->FPC17"
+      ],
+      "observed_edges": [
+        "FPC01->FPC02",
+        "FPC01->FPC17",
+        "FPC01->FPC18",
+        "FPC02->FPC01",
+        "FPC02->FPC17",
+        "FPC02->FPC18",
+        "FPC17->FPC01",
+        "FPC17->FPC02",
+        "FPC17->FPC18",
+        "FPC18->FPC01",
+        "FPC18->FPC02",
+        "FPC18->FPC17"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Arrow Left",
+        "Arrow Right",
+        "Backspace",
+        "\\"
+      ],
+      "phantom_candidates": [
+        "\\"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 985,
+      "rows": [
+        21,
+        22
+      ],
+      "cols": [
+        12,
+        26
+      ],
+      "rectangle_keys": [
+        "W",
+        "Esc",
+        "N",
+        "Numpad 5"
+      ],
+      "pressed_keys": [
+        "W",
+        "Esc",
+        "N"
+      ],
+      "omitted_key": "Numpad 5",
+      "physical_pairs": [
+        "FPC12<->FPC21",
+        "FPC21<->FPC26",
+        "FPC12<->FPC22"
+      ],
+      "expected_edges": [
+        "FPC12->FPC21",
+        "FPC12->FPC22",
+        "FPC12->FPC26",
+        "FPC21->FPC12",
+        "FPC21->FPC22",
+        "FPC21->FPC26",
+        "FPC22->FPC12",
+        "FPC22->FPC21",
+        "FPC22->FPC26",
+        "FPC26->FPC12",
+        "FPC26->FPC21",
+        "FPC26->FPC22"
+      ],
+      "observed_edges": [
+        "FPC12->FPC21",
+        "FPC12->FPC22",
+        "FPC12->FPC26",
+        "FPC21->FPC12",
+        "FPC21->FPC22",
+        "FPC21->FPC26",
+        "FPC22->FPC12",
+        "FPC22->FPC21",
+        "FPC22->FPC26",
+        "FPC26->FPC12",
+        "FPC26->FPC21",
+        "FPC26->FPC22"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Esc",
+        "N",
+        "Numpad 5",
+        "W"
+      ],
+      "phantom_candidates": [
+        "Numpad 5"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 896,
+      "rows": [
+        20,
+        23
+      ],
+      "cols": [
+        13,
+        25
+      ],
+      "rectangle_keys": [
+        "A",
+        "Fn",
+        "T",
+        "Enter"
+      ],
+      "pressed_keys": [
+        "A",
+        "Fn",
+        "Enter"
+      ],
+      "omitted_key": "T",
+      "physical_pairs": [
+        "FPC13<->FPC20",
+        "FPC20<->FPC25",
+        "FPC23<->FPC25"
+      ],
+      "expected_edges": [
+        "FPC13->FPC20",
+        "FPC13->FPC23",
+        "FPC13->FPC25",
+        "FPC20->FPC13",
+        "FPC20->FPC23",
+        "FPC20->FPC25",
+        "FPC23->FPC13",
+        "FPC23->FPC20",
+        "FPC23->FPC25",
+        "FPC25->FPC13",
+        "FPC25->FPC20",
+        "FPC25->FPC23"
+      ],
+      "observed_edges": [
+        "FPC13->FPC20",
+        "FPC13->FPC23",
+        "FPC13->FPC25",
+        "FPC20->FPC13",
+        "FPC20->FPC23",
+        "FPC20->FPC25",
+        "FPC23->FPC13",
+        "FPC23->FPC20",
+        "FPC23->FPC25",
+        "FPC25->FPC13",
+        "FPC25->FPC20",
+        "FPC25->FPC23"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "A",
+        "Enter",
+        "Fn",
+        "T"
+      ],
+      "phantom_candidates": [
+        "T"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 50,
+      "rows": [
+        17,
+        19
+      ],
+      "cols": [
+        3,
+        6
+      ],
+      "rectangle_keys": [
+        "Arrow Up",
+        "5",
+        "Scroll Lock",
+        "7"
+      ],
+      "pressed_keys": [
+        "Arrow Up",
+        "5",
+        "7"
+      ],
+      "omitted_key": "Scroll Lock",
+      "physical_pairs": [
+        "FPC03<->FPC17",
+        "FPC06<->FPC17",
+        "FPC06<->FPC19"
+      ],
+      "expected_edges": [
+        "FPC03->FPC06",
+        "FPC03->FPC17",
+        "FPC03->FPC19",
+        "FPC06->FPC03",
+        "FPC06->FPC17",
+        "FPC06->FPC19",
+        "FPC17->FPC03",
+        "FPC17->FPC06",
+        "FPC17->FPC19",
+        "FPC19->FPC03",
+        "FPC19->FPC06",
+        "FPC19->FPC17"
+      ],
+      "observed_edges": [
+        "FPC03->FPC06",
+        "FPC03->FPC17",
+        "FPC03->FPC19",
+        "FPC06->FPC03",
+        "FPC06->FPC17",
+        "FPC06->FPC19",
+        "FPC17->FPC03",
+        "FPC17->FPC06",
+        "FPC17->FPC19",
+        "FPC19->FPC03",
+        "FPC19->FPC06",
+        "FPC19->FPC17"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "5",
+        "7",
+        "Arrow Up",
+        "Scroll Lock"
+      ],
+      "phantom_candidates": [
+        "Scroll Lock"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 332,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        7,
+        8
+      ],
+      "rectangle_keys": [
+        "Right AltGr",
+        "Right Shift",
+        "Left Alt",
+        "Left Shift"
+      ],
+      "pressed_keys": [
+        "Right AltGr",
+        "Left Alt",
+        "Left Shift"
+      ],
+      "omitted_key": "Right Shift",
+      "physical_pairs": [
+        "FPC07<->FPC17",
+        "FPC07<->FPC24",
+        "FPC08<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC07->FPC08",
+        "FPC07->FPC17",
+        "FPC07->FPC24",
+        "FPC08->FPC07",
+        "FPC08->FPC17",
+        "FPC08->FPC24",
+        "FPC17->FPC07",
+        "FPC17->FPC08",
+        "FPC17->FPC24",
+        "FPC24->FPC07",
+        "FPC24->FPC08",
+        "FPC24->FPC17"
+      ],
+      "observed_edges": [
+        "FPC07->FPC08",
+        "FPC07->FPC17",
+        "FPC07->FPC24",
+        "FPC08->FPC07",
+        "FPC08->FPC17",
+        "FPC08->FPC24",
+        "FPC17->FPC07",
+        "FPC17->FPC08",
+        "FPC17->FPC24",
+        "FPC24->FPC07",
+        "FPC24->FPC08",
+        "FPC24->FPC17"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Left Alt",
+        "Left Shift",
+        "Right AltGr",
+        "Right Shift"
+      ],
+      "phantom_candidates": [
+        "Right Shift"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 308,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        4,
+        5
+      ],
+      "rectangle_keys": [
+        "Arrow Down",
+        "1",
+        "L",
+        "O"
+      ],
+      "pressed_keys": [
+        "Arrow Down",
+        "1",
+        "L"
+      ],
+      "omitted_key": "O",
+      "physical_pairs": [
+        "FPC04<->FPC17",
+        "FPC05<->FPC17",
+        "FPC04<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC04->FPC05",
+        "FPC04->FPC17",
+        "FPC04->FPC24",
+        "FPC05->FPC04",
+        "FPC05->FPC17",
+        "FPC05->FPC24",
+        "FPC17->FPC04",
+        "FPC17->FPC05",
+        "FPC17->FPC24",
+        "FPC24->FPC04",
+        "FPC24->FPC05",
+        "FPC24->FPC17"
+      ],
+      "observed_edges": [
+        "FPC04->FPC05",
+        "FPC04->FPC17",
+        "FPC04->FPC24",
+        "FPC05->FPC04",
+        "FPC05->FPC17",
+        "FPC05->FPC24",
+        "FPC17->FPC04",
+        "FPC17->FPC05",
+        "FPC17->FPC24",
+        "FPC24->FPC04",
+        "FPC24->FPC05",
+        "FPC24->FPC17"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "1",
+        "Arrow Down",
+        "L",
+        "O"
+      ],
+      "phantom_candidates": [
+        "O"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 419,
+      "rows": [
+        18,
+        21
+      ],
+      "cols": [
+        11,
+        15
+      ],
+      "rectangle_keys": [
+        "R",
+        "9",
+        "Q",
+        "F3"
+      ],
+      "pressed_keys": [
+        "R",
+        "9",
+        "Q"
+      ],
+      "omitted_key": "F3",
+      "physical_pairs": [
+        "FPC11<->FPC18",
+        "FPC15<->FPC18",
+        "FPC11<->FPC21"
+      ],
+      "expected_edges": [
+        "FPC11->FPC15",
+        "FPC11->FPC18",
+        "FPC11->FPC21",
+        "FPC15->FPC11",
+        "FPC15->FPC18",
+        "FPC15->FPC21",
+        "FPC18->FPC11",
+        "FPC18->FPC15",
+        "FPC18->FPC21",
+        "FPC21->FPC11",
+        "FPC21->FPC15",
+        "FPC21->FPC18"
+      ],
+      "observed_edges": [
+        "FPC11->FPC15",
+        "FPC11->FPC18",
+        "FPC11->FPC21",
+        "FPC15->FPC11",
+        "FPC15->FPC18",
+        "FPC15->FPC21",
+        "FPC18->FPC11",
+        "FPC18->FPC15",
+        "FPC18->FPC21",
+        "FPC21->FPC11",
+        "FPC21->FPC15",
+        "FPC21->FPC18"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "9",
+        "F3",
+        "Q",
+        "R"
+      ],
+      "phantom_candidates": [
+        "F3"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 349,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        14,
+        26
+      ],
+      "rectangle_keys": [
+        "4",
+        "Tab",
+        "I",
+        "Y"
+      ],
+      "pressed_keys": [
+        "4",
+        "Tab",
+        "I"
+      ],
+      "omitted_key": "Y",
+      "physical_pairs": [
+        "FPC14<->FPC17",
+        "FPC17<->FPC26",
+        "FPC14<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC14->FPC17",
+        "FPC14->FPC24",
+        "FPC14->FPC26",
+        "FPC17->FPC14",
+        "FPC17->FPC24",
+        "FPC17->FPC26",
+        "FPC24->FPC14",
+        "FPC24->FPC17",
+        "FPC24->FPC26",
+        "FPC26->FPC14",
+        "FPC26->FPC17",
+        "FPC26->FPC24"
+      ],
+      "observed_edges": [
+        "FPC14->FPC17",
+        "FPC14->FPC24",
+        "FPC14->FPC26",
+        "FPC17->FPC14",
+        "FPC17->FPC24",
+        "FPC17->FPC26",
+        "FPC24->FPC14",
+        "FPC24->FPC17",
+        "FPC24->FPC26",
+        "FPC26->FPC14",
+        "FPC26->FPC17",
+        "FPC26->FPC24"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "4",
+        "I",
+        "Tab",
+        "Y"
+      ],
+      "phantom_candidates": [
+        "Y"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 350,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        15,
+        16
+      ],
+      "rectangle_keys": [
+        "3",
+        "2",
+        "J",
+        "U"
+      ],
+      "pressed_keys": [
+        "3",
+        "2",
+        "J"
+      ],
+      "omitted_key": "U",
+      "physical_pairs": [
+        "FPC15<->FPC17",
+        "FPC16<->FPC17",
+        "FPC15<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC15->FPC16",
+        "FPC15->FPC17",
+        "FPC15->FPC24",
+        "FPC16->FPC15",
+        "FPC16->FPC17",
+        "FPC16->FPC24",
+        "FPC17->FPC15",
+        "FPC17->FPC16",
+        "FPC17->FPC24",
+        "FPC24->FPC15",
+        "FPC24->FPC16",
+        "FPC24->FPC17"
+      ],
+      "observed_edges": [
+        "FPC15->FPC16",
+        "FPC15->FPC17",
+        "FPC15->FPC24",
+        "FPC16->FPC15",
+        "FPC16->FPC17",
+        "FPC16->FPC24",
+        "FPC17->FPC15",
+        "FPC17->FPC16",
+        "FPC17->FPC24",
+        "FPC24->FPC15",
+        "FPC24->FPC16",
+        "FPC24->FPC17"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "2",
+        "3",
+        "J",
+        "U"
+      ],
+      "phantom_candidates": [
+        "U"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 448,
+      "rows": [
+        18,
+        22
+      ],
+      "cols": [
+        8,
+        16
+      ],
+      "rectangle_keys": [
+        "C",
+        "8",
+        "M",
+        "Numpad 3 PgDn"
+      ],
+      "pressed_keys": [
+        "C",
+        "8",
+        "M"
+      ],
+      "omitted_key": "Numpad 3 PgDn",
+      "physical_pairs": [
+        "FPC08<->FPC18",
+        "FPC16<->FPC18",
+        "FPC08<->FPC22"
+      ],
+      "expected_edges": [
+        "FPC08->FPC16",
+        "FPC08->FPC18",
+        "FPC08->FPC22",
+        "FPC16->FPC08",
+        "FPC16->FPC18",
+        "FPC16->FPC22",
+        "FPC18->FPC08",
+        "FPC18->FPC16",
+        "FPC18->FPC22",
+        "FPC22->FPC08",
+        "FPC22->FPC16",
+        "FPC22->FPC18"
+      ],
+      "observed_edges": [
+        "FPC08->FPC16",
+        "FPC08->FPC18",
+        "FPC08->FPC22",
+        "FPC16->FPC08",
+        "FPC16->FPC18",
+        "FPC16->FPC22",
+        "FPC18->FPC08",
+        "FPC18->FPC16",
+        "FPC18->FPC22",
+        "FPC22->FPC08",
+        "FPC22->FPC16",
+        "FPC22->FPC18"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "8",
+        "C",
+        "M",
+        "Numpad 3 PgDn"
+      ],
+      "phantom_candidates": [
+        "Numpad 3 PgDn"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 1240,
+      "rows": [
+        23,
+        24
+      ],
+      "cols": [
+        7,
+        26
+      ],
+      "rectangle_keys": [
+        "V",
+        "[",
+        "Left Alt",
+        "Y"
+      ],
+      "pressed_keys": [
+        "V",
+        "Left Alt",
+        "Y"
+      ],
+      "omitted_key": "[",
+      "physical_pairs": [
+        "FPC07<->FPC23",
+        "FPC07<->FPC24",
+        "FPC24<->FPC26"
+      ],
+      "expected_edges": [
+        "FPC07->FPC23",
+        "FPC07->FPC24",
+        "FPC07->FPC26",
+        "FPC23->FPC07",
+        "FPC23->FPC24",
+        "FPC23->FPC26",
+        "FPC24->FPC07",
+        "FPC24->FPC23",
+        "FPC24->FPC26",
+        "FPC26->FPC07",
+        "FPC26->FPC23",
+        "FPC26->FPC24"
+      ],
+      "observed_edges": [
+        "FPC07->FPC23",
+        "FPC07->FPC24",
+        "FPC07->FPC26",
+        "FPC23->FPC07",
+        "FPC23->FPC24",
+        "FPC23->FPC26",
+        "FPC24->FPC07",
+        "FPC24->FPC23",
+        "FPC24->FPC26",
+        "FPC26->FPC07",
+        "FPC26->FPC23",
+        "FPC26->FPC24"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Left Alt",
+        "V",
+        "Y",
+        "["
+      ],
+      "phantom_candidates": [
+        "["
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 548,
+      "rows": [
+        19,
+        20
+      ],
+      "cols": [
+        10,
+        25
+      ],
+      "rectangle_keys": [
+        "Z",
+        "Win",
+        "X",
+        "Fn"
+      ],
+      "pressed_keys": [
+        "Z",
+        "Win",
+        "Fn"
+      ],
+      "omitted_key": "X",
+      "physical_pairs": [
+        "FPC10<->FPC19",
+        "FPC19<->FPC25",
+        "FPC20<->FPC25"
+      ],
+      "expected_edges": [
+        "FPC10->FPC19",
+        "FPC10->FPC20",
+        "FPC10->FPC25",
+        "FPC19->FPC10",
+        "FPC19->FPC20",
+        "FPC19->FPC25",
+        "FPC20->FPC10",
+        "FPC20->FPC19",
+        "FPC20->FPC25",
+        "FPC25->FPC10",
+        "FPC25->FPC19",
+        "FPC25->FPC20"
+      ],
+      "observed_edges": [
+        "FPC10->FPC19",
+        "FPC10->FPC20",
+        "FPC10->FPC25",
+        "FPC19->FPC10",
+        "FPC19->FPC20",
+        "FPC19->FPC25",
+        "FPC20->FPC10",
+        "FPC20->FPC19",
+        "FPC20->FPC25",
+        "FPC25->FPC10",
+        "FPC25->FPC19",
+        "FPC25->FPC20"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Fn",
+        "Win",
+        "X",
+        "Z"
+      ],
+      "phantom_candidates": [
+        "X"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 375,
+      "rows": [
+        18,
+        19
+      ],
+      "cols": [
+        9,
+        14
+      ],
+      "rectangle_keys": [
+        "F",
+        "0",
+        "Space",
+        "6"
+      ],
+      "pressed_keys": [
+        "F",
+        "0",
+        "6"
+      ],
+      "omitted_key": "Space",
+      "physical_pairs": [
+        "FPC09<->FPC18",
+        "FPC14<->FPC18",
+        "FPC14<->FPC19"
+      ],
+      "expected_edges": [
+        "FPC09->FPC14",
+        "FPC09->FPC18",
+        "FPC09->FPC19",
+        "FPC14->FPC09",
+        "FPC14->FPC18",
+        "FPC14->FPC19",
+        "FPC18->FPC09",
+        "FPC18->FPC14",
+        "FPC18->FPC19",
+        "FPC19->FPC09",
+        "FPC19->FPC14",
+        "FPC19->FPC18"
+      ],
+      "observed_edges": [
+        "FPC09->FPC14",
+        "FPC09->FPC18",
+        "FPC09->FPC19",
+        "FPC14->FPC09",
+        "FPC14->FPC18",
+        "FPC14->FPC19",
+        "FPC18->FPC09",
+        "FPC18->FPC14",
+        "FPC18->FPC19",
+        "FPC19->FPC09",
+        "FPC19->FPC14",
+        "FPC19->FPC18"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "0",
+        "6",
+        "F",
+        "Space"
+      ],
+      "phantom_candidates": [
+        "Space"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 1135,
+      "rows": [
+        22,
+        23
+      ],
+      "cols": [
+        13,
+        25
+      ],
+      "rectangle_keys": [
+        "B",
+        "Numpad Enter",
+        "T",
+        "Enter"
+      ],
+      "pressed_keys": [
+        "B",
+        "T",
+        "Enter"
+      ],
+      "omitted_key": "Numpad Enter",
+      "physical_pairs": [
+        "FPC13<->FPC22",
+        "FPC13<->FPC23",
+        "FPC23<->FPC25"
+      ],
+      "expected_edges": [
+        "FPC13->FPC22",
+        "FPC13->FPC23",
+        "FPC13->FPC25",
+        "FPC22->FPC13",
+        "FPC22->FPC23",
+        "FPC22->FPC25",
+        "FPC23->FPC13",
+        "FPC23->FPC22",
+        "FPC23->FPC25",
+        "FPC25->FPC13",
+        "FPC25->FPC22",
+        "FPC25->FPC23"
+      ],
+      "observed_edges": [
+        "FPC13->FPC22",
+        "FPC13->FPC23",
+        "FPC13->FPC25",
+        "FPC22->FPC13",
+        "FPC22->FPC23",
+        "FPC22->FPC25",
+        "FPC23->FPC13",
+        "FPC23->FPC22",
+        "FPC23->FPC25",
+        "FPC25->FPC13",
+        "FPC25->FPC22",
+        "FPC25->FPC23"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "B",
+        "Enter",
+        "Numpad Enter",
+        "T"
+      ],
+      "phantom_candidates": [
+        "Numpad Enter"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 338,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        8,
+        10
+      ],
+      "rectangle_keys": [
+        "Right Shift",
+        "Right Ctrl",
+        "Left Shift",
+        "Left Ctrl"
+      ],
+      "pressed_keys": [
+        "Right Shift",
+        "Right Ctrl",
+        "Left Ctrl"
+      ],
+      "omitted_key": "Left Shift",
+      "physical_pairs": [
+        "FPC08<->FPC17",
+        "FPC10<->FPC17",
+        "FPC10<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC08->FPC10",
+        "FPC08->FPC17",
+        "FPC08->FPC24",
+        "FPC10->FPC08",
+        "FPC10->FPC17",
+        "FPC10->FPC24",
+        "FPC17->FPC08",
+        "FPC17->FPC10",
+        "FPC17->FPC24",
+        "FPC24->FPC08",
+        "FPC24->FPC10",
+        "FPC24->FPC17"
+      ],
+      "observed_edges": [
+        "FPC08->FPC10",
+        "FPC08->FPC17",
+        "FPC08->FPC24",
+        "FPC10->FPC08",
+        "FPC10->FPC17",
+        "FPC10->FPC24",
+        "FPC17->FPC08",
+        "FPC17->FPC10",
+        "FPC17->FPC24",
+        "FPC24->FPC08",
+        "FPC24->FPC10",
+        "FPC24->FPC17"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Left Ctrl",
+        "Left Shift",
+        "Right Ctrl",
+        "Right Shift"
+      ],
+      "phantom_candidates": [
+        "Left Shift"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 763,
+      "rows": [
+        19,
+        24
+      ],
+      "cols": [
+        5,
+        6
+      ],
+      "rectangle_keys": [
+        "Insert",
+        "7",
+        "O",
+        "K"
+      ],
+      "pressed_keys": [
+        "7",
+        "O",
+        "K"
+      ],
+      "omitted_key": "Insert",
+      "physical_pairs": [
+        "FPC06<->FPC19",
+        "FPC05<->FPC24",
+        "FPC06<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC05->FPC06",
+        "FPC05->FPC19",
+        "FPC05->FPC24",
+        "FPC06->FPC05",
+        "FPC06->FPC19",
+        "FPC06->FPC24",
+        "FPC19->FPC05",
+        "FPC19->FPC06",
+        "FPC19->FPC24",
+        "FPC24->FPC05",
+        "FPC24->FPC06",
+        "FPC24->FPC19"
+      ],
+      "observed_edges": [
+        "FPC05->FPC06",
+        "FPC05->FPC19",
+        "FPC05->FPC24",
+        "FPC06->FPC05",
+        "FPC06->FPC19",
+        "FPC06->FPC24",
+        "FPC19->FPC05",
+        "FPC19->FPC06",
+        "FPC19->FPC24",
+        "FPC24->FPC05",
+        "FPC24->FPC06",
+        "FPC24->FPC19"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "7",
+        "Insert",
+        "K",
+        "O"
+      ],
+      "phantom_candidates": [
+        "Insert"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 287,
+      "rows": [
+        17,
+        24
+      ],
+      "cols": [
+        2,
+        3
+      ],
+      "rectangle_keys": [
+        "Arrow Left",
+        "Arrow Up",
+        "H",
+        "P"
+      ],
+      "pressed_keys": [
+        "Arrow Left",
+        "H",
+        "P"
+      ],
+      "omitted_key": "Arrow Up",
+      "physical_pairs": [
+        "FPC02<->FPC17",
+        "FPC02<->FPC24",
+        "FPC03<->FPC24"
+      ],
+      "expected_edges": [
+        "FPC02->FPC03",
+        "FPC02->FPC17",
+        "FPC02->FPC24",
+        "FPC03->FPC02",
+        "FPC03->FPC17",
+        "FPC03->FPC24",
+        "FPC17->FPC02",
+        "FPC17->FPC03",
+        "FPC17->FPC24",
+        "FPC24->FPC02",
+        "FPC24->FPC03",
+        "FPC24->FPC17"
+      ],
+      "observed_edges": [
+        "FPC02->FPC03",
+        "FPC02->FPC17",
+        "FPC02->FPC24",
+        "FPC03->FPC02",
+        "FPC03->FPC17",
+        "FPC03->FPC24",
+        "FPC17->FPC02",
+        "FPC17->FPC03",
+        "FPC17->FPC24",
+        "FPC24->FPC02",
+        "FPC24->FPC03",
+        "FPC24->FPC17"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "Arrow Left",
+        "Arrow Up",
+        "H",
+        "P"
+      ],
+      "phantom_candidates": [
+        "Arrow Up"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    },
+    {
+      "status": "captured",
+      "rectangle_id": 818,
+      "rows": [
+        20,
+        21
+      ],
+      "cols": [
+        11,
+        26
+      ],
+      "rectangle_keys": [
+        "D",
+        "`",
+        "Q",
+        "Esc"
+      ],
+      "pressed_keys": [
+        "D",
+        "Q",
+        "Esc"
+      ],
+      "omitted_key": "`",
+      "physical_pairs": [
+        "FPC11<->FPC20",
+        "FPC11<->FPC21",
+        "FPC21<->FPC26"
+      ],
+      "expected_edges": [
+        "FPC11->FPC20",
+        "FPC11->FPC21",
+        "FPC11->FPC26",
+        "FPC20->FPC11",
+        "FPC20->FPC21",
+        "FPC20->FPC26",
+        "FPC21->FPC11",
+        "FPC21->FPC20",
+        "FPC21->FPC26",
+        "FPC26->FPC11",
+        "FPC26->FPC20",
+        "FPC26->FPC21"
+      ],
+      "observed_edges": [
+        "FPC11->FPC20",
+        "FPC11->FPC21",
+        "FPC11->FPC26",
+        "FPC20->FPC11",
+        "FPC20->FPC21",
+        "FPC20->FPC26",
+        "FPC21->FPC11",
+        "FPC21->FPC20",
+        "FPC21->FPC26",
+        "FPC26->FPC11",
+        "FPC26->FPC20",
+        "FPC26->FPC21"
+      ],
+      "matching_samples": 5,
+      "sample_count": 5,
+      "electrically_possible_keys": [
+        "D",
+        "Esc",
+        "Q",
+        "`"
+      ],
+      "phantom_candidates": [
+        "`"
+      ],
+      "expected_ghost_seen": true,
+      "release_confirmed": true
+    }
+  ]
+}

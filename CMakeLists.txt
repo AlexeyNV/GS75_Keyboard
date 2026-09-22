@@ -45,6 +45,35 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    Core/Src/matrix.c
+    Core/Src/matrix_debounce.c
+    Core/Src/anti_ghosting.c
+    Core/Src/matrix_debug.c
+    Core/Src/uart_rx.c
+    Core/Src/keymap.c
+    Core/Src/keyboard.c
+    Core/Src/keyboard_runtime.c
+    Core/Src/hid_keymap.c
+    Core/Src/hid_fn.c
+    Core/Src/hid_report.c
+    Core/Src/usb_keyboard.c
+    Core/Src/usb_consumer.c
+    Core/Src/usb_descriptors.c
+    Core/Src/usbd_keyboard.c
+    Core/Src/usb_device.c
+    Core/Src/runtime_timing.c
+    Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c
+    Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c
+    Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c
+    Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c
+    Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c
+    Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c
+)
+
+# USB is custom-owned; CubeMX .ioc and generated targets remain untouched.
+target_compile_definitions(stm32cubemx INTERFACE HAL_PCD_MODULE_ENABLED)
+target_include_directories(stm32cubemx INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/ST/STM32_USB_Device_Library/Core/Inc
 )
 
 # Add include paths
@@ -53,8 +82,12 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 )
 
 # Add project symbols (macros)
+set(GS75_USB_VID "0x0483" CACHE STRING "USB VID: ST example default is prototype-only")
+set(GS75_USB_PID "0x5710" CACHE STRING "USB PID: ST example default is prototype-only")
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
+    GS75_USB_VID=${GS75_USB_VID}
+    GS75_USB_PID=${GS75_USB_PID}
 )
 
 # Remove wrong libob.a library dependency when using cpp files

@@ -1,0 +1,2047 @@
+{
+  "format_version": 1,
+  "created_local": "2026-09-21T17:22:28",
+  "serial": {
+    "port": "COM17",
+    "baud": 115200
+  },
+  "plan": {
+    "description": "Редактируемый план картирования клавиатуры MSI GS75. Удалите отсутствующие клавиши или добавьте свои.",
+    "keys": [
+      "Esc",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F11",
+      "F12",
+      "Print Screen",
+      "Scroll Lock",
+      "Pause Break",
+      "Insert",
+      "Delete",
+      "Page up Home",
+      "Page down END",
+      "`",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+      "-",
+      "=",
+      "Backspace",
+      "Num Lock",
+      "Numpad /",
+      "Numpad *",
+      "Numpad -",
+      "Tab",
+      "Q",
+      "W",
+      "E",
+      "R",
+      "T",
+      "Y",
+      "U",
+      "I",
+      "O",
+      "P",
+      "[",
+      "]",
+      "\\",
+      "Numpad 7 Home",
+      "Numpad 8 Up",
+      "Numpad 9 PgUp",
+      "Numpad +",
+      "Caps Lock",
+      "A",
+      "S",
+      "D",
+      "F",
+      "G",
+      "H",
+      "J",
+      "K",
+      "L",
+      ";",
+      "'",
+      "Enter",
+      "Numpad 4 Left",
+      "Numpad 5",
+      "Numpad 6 Right",
+      "Left Shift",
+      "Z",
+      "X",
+      "C",
+      "V",
+      "B",
+      "N",
+      "M",
+      ",",
+      ".",
+      "/",
+      "Right Shift",
+      "Arrow Up",
+      "Numpad 1 End",
+      "Numpad 2 Down",
+      "Numpad 3 PgDn",
+      "Numpad Enter",
+      "Left Ctrl",
+      "Fn",
+      "Left Alt",
+      "Space",
+      "|\\",
+      "Right AltGr",
+      "Win",
+      "Right Ctrl",
+      "Arrow Left",
+      "Arrow Down",
+      "Arrow Right",
+      "Numpad 0",
+      "Numpad ."
+    ],
+    "combos": [
+      [
+        "W",
+        "D"
+      ],
+      [
+        "Left Shift",
+        "A"
+      ],
+      [
+        "Left Ctrl",
+        "C"
+      ],
+      [
+        "W",
+        "S"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "Left Shift",
+        "Left Ctrl"
+      ],
+      [
+        "Left Shift",
+        "C"
+      ],
+      [
+        "Fn",
+        "Enter"
+      ],
+      [
+        "W",
+        "A",
+        "Left Shift"
+      ],
+      [
+        "Left Ctrl",
+        "Left Shift",
+        "Esc"
+      ],
+      [
+        "W",
+        "A",
+        "D"
+      ]
+    ]
+  },
+  "baseline": {
+    "edges": [],
+    "matching_samples": 10,
+    "sample_count": 10
+  },
+  "singles": {
+    "Esc": {
+      "observed_edges": [
+        "FPC21->FPC26",
+        "FPC26->FPC21"
+      ],
+      "active_edges": [
+        "FPC21->FPC26",
+        "FPC26->FPC21"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F1": {
+      "observed_edges": [
+        "FPC05->FPC18",
+        "FPC18->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC18",
+        "FPC18->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F2": {
+      "observed_edges": [
+        "FPC16->FPC21",
+        "FPC21->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC21",
+        "FPC21->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F3": {
+      "observed_edges": [
+        "FPC15->FPC21",
+        "FPC21->FPC15"
+      ],
+      "active_edges": [
+        "FPC15->FPC21",
+        "FPC21->FPC15"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F4": {
+      "observed_edges": [
+        "FPC14->FPC21",
+        "FPC21->FPC14"
+      ],
+      "active_edges": [
+        "FPC14->FPC21",
+        "FPC21->FPC14"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F5": {
+      "observed_edges": [
+        "FPC06->FPC21",
+        "FPC21->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC21",
+        "FPC21->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F6": {
+      "observed_edges": [
+        "FPC06->FPC20",
+        "FPC20->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC20",
+        "FPC20->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F7": {
+      "observed_edges": [
+        "FPC05->FPC21",
+        "FPC21->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC21",
+        "FPC21->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F8": {
+      "observed_edges": [
+        "FPC05->FPC20",
+        "FPC20->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC20",
+        "FPC20->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F9": {
+      "observed_edges": [
+        "FPC03->FPC21",
+        "FPC21->FPC03"
+      ],
+      "active_edges": [
+        "FPC03->FPC21",
+        "FPC21->FPC03"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F10": {
+      "observed_edges": [
+        "FPC04->FPC21",
+        "FPC21->FPC04"
+      ],
+      "active_edges": [
+        "FPC04->FPC21",
+        "FPC21->FPC04"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F11": {
+      "observed_edges": [
+        "FPC02->FPC21",
+        "FPC21->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC21",
+        "FPC21->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F12": {
+      "observed_edges": [
+        "FPC01->FPC21",
+        "FPC21->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC21",
+        "FPC21->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Print Screen": {
+      "observed_edges": [
+        "FPC02->FPC23",
+        "FPC23->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC23",
+        "FPC23->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Scroll Lock": {
+      "observed_edges": [
+        "FPC03->FPC19",
+        "FPC19->FPC03"
+      ],
+      "active_edges": [
+        "FPC03->FPC19",
+        "FPC19->FPC03"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Pause Break": {
+      "observed_edges": [
+        "FPC04->FPC19",
+        "FPC19->FPC04"
+      ],
+      "active_edges": [
+        "FPC04->FPC19",
+        "FPC19->FPC04"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Insert": {
+      "observed_edges": [
+        "FPC05->FPC19",
+        "FPC19->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC19",
+        "FPC19->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Delete": {
+      "observed_edges": [
+        "FPC06->FPC18",
+        "FPC18->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC18",
+        "FPC18->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Page up Home": {
+      "observed_edges": [
+        "FPC16->FPC19",
+        "FPC19->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC19",
+        "FPC19->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Page down END": {
+      "observed_edges": [
+        "FPC15->FPC19",
+        "FPC19->FPC15"
+      ],
+      "active_edges": [
+        "FPC15->FPC19",
+        "FPC19->FPC15"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "`": {
+      "observed_edges": [
+        "FPC20->FPC26",
+        "FPC26->FPC20"
+      ],
+      "active_edges": [
+        "FPC20->FPC26",
+        "FPC26->FPC20"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "1": {
+      "observed_edges": [
+        "FPC05->FPC17",
+        "FPC17->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC17",
+        "FPC17->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "2": {
+      "observed_edges": [
+        "FPC16->FPC17",
+        "FPC17->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC17",
+        "FPC17->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "3": {
+      "observed_edges": [
+        "FPC15->FPC17",
+        "FPC17->FPC15"
+      ],
+      "active_edges": [
+        "FPC15->FPC17",
+        "FPC17->FPC15"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "4": {
+      "observed_edges": [
+        "FPC14->FPC17",
+        "FPC17->FPC14"
+      ],
+      "active_edges": [
+        "FPC14->FPC17",
+        "FPC17->FPC14"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "5": {
+      "observed_edges": [
+        "FPC06->FPC17",
+        "FPC17->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC17",
+        "FPC17->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "6": {
+      "observed_edges": [
+        "FPC14->FPC19",
+        "FPC19->FPC14"
+      ],
+      "active_edges": [
+        "FPC14->FPC19",
+        "FPC19->FPC14"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "7": {
+      "observed_edges": [
+        "FPC06->FPC19",
+        "FPC19->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC19",
+        "FPC19->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "8": {
+      "observed_edges": [
+        "FPC16->FPC18",
+        "FPC18->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC18",
+        "FPC18->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "9": {
+      "observed_edges": [
+        "FPC15->FPC18",
+        "FPC18->FPC15"
+      ],
+      "active_edges": [
+        "FPC15->FPC18",
+        "FPC18->FPC15"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "0": {
+      "observed_edges": [
+        "FPC14->FPC18",
+        "FPC18->FPC14"
+      ],
+      "active_edges": [
+        "FPC14->FPC18",
+        "FPC18->FPC14"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "-": {
+      "observed_edges": [
+        "FPC15->FPC23",
+        "FPC23->FPC15"
+      ],
+      "active_edges": [
+        "FPC15->FPC23",
+        "FPC23->FPC15"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "=": {
+      "observed_edges": [
+        "FPC05->FPC23",
+        "FPC23->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC23",
+        "FPC23->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Backspace": {
+      "observed_edges": [
+        "FPC01->FPC18",
+        "FPC18->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC18",
+        "FPC18->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Num Lock": {
+      "observed_edges": [
+        "FPC01->FPC19",
+        "FPC19->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC19",
+        "FPC19->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad /": {
+      "observed_edges": [
+        "FPC01->FPC20",
+        "FPC20->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC20",
+        "FPC20->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad *": {
+      "observed_edges": [
+        "FPC02->FPC20",
+        "FPC20->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC20",
+        "FPC20->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad -": {
+      "observed_edges": [
+        "FPC04->FPC20",
+        "FPC20->FPC04"
+      ],
+      "active_edges": [
+        "FPC04->FPC20",
+        "FPC20->FPC04"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Tab": {
+      "observed_edges": [
+        "FPC17->FPC26",
+        "FPC26->FPC17"
+      ],
+      "active_edges": [
+        "FPC17->FPC26",
+        "FPC26->FPC17"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Q": {
+      "observed_edges": [
+        "FPC11->FPC21",
+        "FPC21->FPC11"
+      ],
+      "active_edges": [
+        "FPC11->FPC21",
+        "FPC21->FPC11"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "W": {
+      "observed_edges": [
+        "FPC12->FPC21",
+        "FPC21->FPC12"
+      ],
+      "active_edges": [
+        "FPC12->FPC21",
+        "FPC21->FPC12"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "E": {
+      "observed_edges": [
+        "FPC07->FPC21",
+        "FPC21->FPC07"
+      ],
+      "active_edges": [
+        "FPC07->FPC21",
+        "FPC21->FPC07"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "R": {
+      "observed_edges": [
+        "FPC11->FPC18",
+        "FPC18->FPC11"
+      ],
+      "active_edges": [
+        "FPC11->FPC18",
+        "FPC18->FPC11"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "T": {
+      "observed_edges": [
+        "FPC13->FPC23",
+        "FPC23->FPC13"
+      ],
+      "active_edges": [
+        "FPC13->FPC23",
+        "FPC23->FPC13"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Y": {
+      "observed_edges": [
+        "FPC24->FPC26",
+        "FPC26->FPC24"
+      ],
+      "active_edges": [
+        "FPC24->FPC26",
+        "FPC26->FPC24"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "U": {
+      "observed_edges": [
+        "FPC16->FPC24",
+        "FPC24->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC24",
+        "FPC24->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "I": {
+      "observed_edges": [
+        "FPC14->FPC24",
+        "FPC24->FPC14"
+      ],
+      "active_edges": [
+        "FPC14->FPC24",
+        "FPC24->FPC14"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "O": {
+      "observed_edges": [
+        "FPC05->FPC24",
+        "FPC24->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC24",
+        "FPC24->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "P": {
+      "observed_edges": [
+        "FPC03->FPC24",
+        "FPC24->FPC03"
+      ],
+      "active_edges": [
+        "FPC03->FPC24",
+        "FPC24->FPC03"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "[": {
+      "observed_edges": [
+        "FPC23->FPC26",
+        "FPC26->FPC23"
+      ],
+      "active_edges": [
+        "FPC23->FPC26",
+        "FPC26->FPC23"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "]": {
+      "observed_edges": [
+        "FPC14->FPC23",
+        "FPC23->FPC14"
+      ],
+      "active_edges": [
+        "FPC14->FPC23",
+        "FPC23->FPC14"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "\\": {
+      "observed_edges": [
+        "FPC02->FPC18",
+        "FPC18->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC18",
+        "FPC18->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 7 Home": {
+      "observed_edges": [
+        "FPC01->FPC22",
+        "FPC22->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC22",
+        "FPC22->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 8 Up": {
+      "observed_edges": [
+        "FPC03->FPC22",
+        "FPC22->FPC03"
+      ],
+      "active_edges": [
+        "FPC03->FPC22",
+        "FPC22->FPC03"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 9 PgUp": {
+      "observed_edges": [
+        "FPC04->FPC22",
+        "FPC22->FPC04"
+      ],
+      "active_edges": [
+        "FPC04->FPC22",
+        "FPC22->FPC04"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad +": {
+      "observed_edges": [
+        "FPC03->FPC20",
+        "FPC20->FPC03"
+      ],
+      "active_edges": [
+        "FPC03->FPC20",
+        "FPC20->FPC03"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Caps Lock": {
+      "observed_edges": [
+        "FPC02->FPC19",
+        "FPC19->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC19",
+        "FPC19->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "A": {
+      "observed_edges": [
+        "FPC13->FPC20",
+        "FPC20->FPC13"
+      ],
+      "active_edges": [
+        "FPC13->FPC20",
+        "FPC20->FPC13"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "S": {
+      "observed_edges": [
+        "FPC12->FPC19",
+        "FPC19->FPC12"
+      ],
+      "active_edges": [
+        "FPC12->FPC19",
+        "FPC19->FPC12"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "D": {
+      "observed_edges": [
+        "FPC11->FPC20",
+        "FPC20->FPC11"
+      ],
+      "active_edges": [
+        "FPC11->FPC20",
+        "FPC20->FPC11"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "F": {
+      "observed_edges": [
+        "FPC09->FPC18",
+        "FPC18->FPC09"
+      ],
+      "active_edges": [
+        "FPC09->FPC18",
+        "FPC18->FPC09"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "G": {
+      "observed_edges": [
+        "FPC09->FPC23",
+        "FPC23->FPC09"
+      ],
+      "active_edges": [
+        "FPC09->FPC23",
+        "FPC23->FPC09"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "H": {
+      "observed_edges": [
+        "FPC02->FPC24",
+        "FPC24->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC24",
+        "FPC24->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "J": {
+      "observed_edges": [
+        "FPC15->FPC24",
+        "FPC24->FPC15"
+      ],
+      "active_edges": [
+        "FPC15->FPC24",
+        "FPC24->FPC15"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "K": {
+      "observed_edges": [
+        "FPC06->FPC24",
+        "FPC24->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC24",
+        "FPC24->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "L": {
+      "observed_edges": [
+        "FPC04->FPC24",
+        "FPC24->FPC04"
+      ],
+      "active_edges": [
+        "FPC04->FPC24",
+        "FPC24->FPC04"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    ";": {
+      "observed_edges": [
+        "FPC01->FPC23",
+        "FPC23->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC23",
+        "FPC23->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "'": {
+      "observed_edges": [
+        "FPC03->FPC23",
+        "FPC23->FPC03"
+      ],
+      "active_edges": [
+        "FPC03->FPC23",
+        "FPC23->FPC03"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Enter": {
+      "observed_edges": [
+        "FPC23->FPC25",
+        "FPC25->FPC23"
+      ],
+      "active_edges": [
+        "FPC23->FPC25",
+        "FPC25->FPC23"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 4 Left": {
+      "observed_edges": [
+        "FPC15->FPC22",
+        "FPC22->FPC15"
+      ],
+      "active_edges": [
+        "FPC15->FPC22",
+        "FPC22->FPC15"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 5": {
+      "observed_edges": [
+        "FPC22->FPC26",
+        "FPC26->FPC22"
+      ],
+      "active_edges": [
+        "FPC22->FPC26",
+        "FPC26->FPC22"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 6 Right": {
+      "observed_edges": [
+        "FPC02->FPC22",
+        "FPC22->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC22",
+        "FPC22->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Left Shift": {
+      "observed_edges": [
+        "FPC08->FPC24",
+        "FPC24->FPC08"
+      ],
+      "active_edges": [
+        "FPC08->FPC24",
+        "FPC24->FPC08"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Z": {
+      "observed_edges": [
+        "FPC10->FPC19",
+        "FPC19->FPC10"
+      ],
+      "active_edges": [
+        "FPC10->FPC19",
+        "FPC19->FPC10"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "X": {
+      "observed_edges": [
+        "FPC10->FPC20",
+        "FPC20->FPC10"
+      ],
+      "active_edges": [
+        "FPC10->FPC20",
+        "FPC20->FPC10"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "C": {
+      "observed_edges": [
+        "FPC08->FPC18",
+        "FPC18->FPC08"
+      ],
+      "active_edges": [
+        "FPC08->FPC18",
+        "FPC18->FPC08"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "V": {
+      "observed_edges": [
+        "FPC07->FPC23",
+        "FPC23->FPC07"
+      ],
+      "active_edges": [
+        "FPC07->FPC23",
+        "FPC23->FPC07"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "B": {
+      "observed_edges": [
+        "FPC13->FPC22",
+        "FPC22->FPC13"
+      ],
+      "active_edges": [
+        "FPC13->FPC22",
+        "FPC22->FPC13"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "N": {
+      "observed_edges": [
+        "FPC12->FPC22",
+        "FPC22->FPC12"
+      ],
+      "active_edges": [
+        "FPC12->FPC22",
+        "FPC22->FPC12"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "M": {
+      "observed_edges": [
+        "FPC08->FPC22",
+        "FPC22->FPC08"
+      ],
+      "active_edges": [
+        "FPC08->FPC22",
+        "FPC22->FPC08"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    ",": {
+      "observed_edges": [
+        "FPC01->FPC24",
+        "FPC24->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC24",
+        "FPC24->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    ".": {
+      "observed_edges": [
+        "FPC06->FPC23",
+        "FPC23->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC23",
+        "FPC23->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "/": {
+      "observed_edges": [
+        "FPC16->FPC23",
+        "FPC23->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC23",
+        "FPC23->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Right Shift": {
+      "observed_edges": [
+        "FPC08->FPC17",
+        "FPC17->FPC08"
+      ],
+      "active_edges": [
+        "FPC08->FPC17",
+        "FPC17->FPC08"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Arrow Up": {
+      "observed_edges": [
+        "FPC03->FPC17",
+        "FPC17->FPC03"
+      ],
+      "active_edges": [
+        "FPC03->FPC17",
+        "FPC17->FPC03"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 1 End": {
+      "observed_edges": [
+        "FPC05->FPC22",
+        "FPC22->FPC05"
+      ],
+      "active_edges": [
+        "FPC05->FPC22",
+        "FPC22->FPC05"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 2 Down": {
+      "observed_edges": [
+        "FPC14->FPC22",
+        "FPC22->FPC14"
+      ],
+      "active_edges": [
+        "FPC14->FPC22",
+        "FPC22->FPC14"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 3 PgDn": {
+      "observed_edges": [
+        "FPC16->FPC22",
+        "FPC22->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC22",
+        "FPC22->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad Enter": {
+      "observed_edges": [
+        "FPC22->FPC25",
+        "FPC25->FPC22"
+      ],
+      "active_edges": [
+        "FPC22->FPC25",
+        "FPC25->FPC22"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Left Ctrl": {
+      "observed_edges": [
+        "FPC10->FPC24",
+        "FPC24->FPC10"
+      ],
+      "active_edges": [
+        "FPC10->FPC24",
+        "FPC24->FPC10"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Fn": {
+      "observed_edges": [
+        "FPC20->FPC25",
+        "FPC25->FPC20"
+      ],
+      "active_edges": [
+        "FPC20->FPC25",
+        "FPC25->FPC20"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Left Alt": {
+      "observed_edges": [
+        "FPC07->FPC24",
+        "FPC24->FPC07"
+      ],
+      "active_edges": [
+        "FPC07->FPC24",
+        "FPC24->FPC07"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Space": {
+      "observed_edges": [
+        "FPC09->FPC19",
+        "FPC19->FPC09"
+      ],
+      "active_edges": [
+        "FPC09->FPC19",
+        "FPC19->FPC09"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "|\\": {
+      "observed_edges": [
+        "FPC16->FPC20",
+        "FPC20->FPC16"
+      ],
+      "active_edges": [
+        "FPC16->FPC20",
+        "FPC20->FPC16"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Right AltGr": {
+      "observed_edges": [
+        "FPC07->FPC17",
+        "FPC17->FPC07"
+      ],
+      "active_edges": [
+        "FPC07->FPC17",
+        "FPC17->FPC07"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Win": {
+      "observed_edges": [
+        "FPC19->FPC25",
+        "FPC25->FPC19"
+      ],
+      "active_edges": [
+        "FPC19->FPC25",
+        "FPC25->FPC19"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Right Ctrl": {
+      "observed_edges": [
+        "FPC10->FPC17",
+        "FPC17->FPC10"
+      ],
+      "active_edges": [
+        "FPC10->FPC17",
+        "FPC17->FPC10"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Arrow Left": {
+      "observed_edges": [
+        "FPC02->FPC17",
+        "FPC17->FPC02"
+      ],
+      "active_edges": [
+        "FPC02->FPC17",
+        "FPC17->FPC02"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Arrow Down": {
+      "observed_edges": [
+        "FPC04->FPC17",
+        "FPC17->FPC04"
+      ],
+      "active_edges": [
+        "FPC04->FPC17",
+        "FPC17->FPC04"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Arrow Right": {
+      "observed_edges": [
+        "FPC01->FPC17",
+        "FPC17->FPC01"
+      ],
+      "active_edges": [
+        "FPC01->FPC17",
+        "FPC17->FPC01"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad 0": {
+      "observed_edges": [
+        "FPC06->FPC22",
+        "FPC22->FPC06"
+      ],
+      "active_edges": [
+        "FPC06->FPC22",
+        "FPC22->FPC06"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    },
+    "Numpad .": {
+      "observed_edges": [
+        "FPC19->FPC26",
+        "FPC26->FPC19"
+      ],
+      "active_edges": [
+        "FPC19->FPC26",
+        "FPC26->FPC19"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    }
+  },
+  "combos": {
+    "W + D": {
+      "observed_edges": [
+        "FPC11->FPC20",
+        "FPC12->FPC21",
+        "FPC20->FPC11",
+        "FPC21->FPC12"
+      ],
+      "active_edges": [
+        "FPC11->FPC20",
+        "FPC12->FPC21",
+        "FPC20->FPC11",
+        "FPC21->FPC12"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "W",
+        "D"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC12<->FPC21",
+          "FPC11<->FPC20"
+        ],
+        "expected_edges": [
+          "FPC11->FPC20",
+          "FPC12->FPC21",
+          "FPC20->FPC11",
+          "FPC21->FPC12"
+        ],
+        "actual_edges": [
+          "FPC11->FPC20",
+          "FPC12->FPC21",
+          "FPC20->FPC11",
+          "FPC21->FPC12"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "Left Shift + A": {
+      "observed_edges": [
+        "FPC08->FPC24",
+        "FPC13->FPC20",
+        "FPC20->FPC13",
+        "FPC24->FPC08"
+      ],
+      "active_edges": [
+        "FPC08->FPC24",
+        "FPC13->FPC20",
+        "FPC20->FPC13",
+        "FPC24->FPC08"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "Left Shift",
+        "A"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC08<->FPC24",
+          "FPC13<->FPC20"
+        ],
+        "expected_edges": [
+          "FPC08->FPC24",
+          "FPC13->FPC20",
+          "FPC20->FPC13",
+          "FPC24->FPC08"
+        ],
+        "actual_edges": [
+          "FPC08->FPC24",
+          "FPC13->FPC20",
+          "FPC20->FPC13",
+          "FPC24->FPC08"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "Left Ctrl + C": {
+      "observed_edges": [
+        "FPC08->FPC18",
+        "FPC10->FPC24",
+        "FPC18->FPC08",
+        "FPC24->FPC10"
+      ],
+      "active_edges": [
+        "FPC08->FPC18",
+        "FPC10->FPC24",
+        "FPC18->FPC08",
+        "FPC24->FPC10"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "Left Ctrl",
+        "C"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC10<->FPC24",
+          "FPC08<->FPC18"
+        ],
+        "expected_edges": [
+          "FPC08->FPC18",
+          "FPC10->FPC24",
+          "FPC18->FPC08",
+          "FPC24->FPC10"
+        ],
+        "actual_edges": [
+          "FPC08->FPC18",
+          "FPC10->FPC24",
+          "FPC18->FPC08",
+          "FPC24->FPC10"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "W + S": {
+      "observed_edges": [
+        "FPC12->FPC19",
+        "FPC12->FPC21",
+        "FPC19->FPC12",
+        "FPC19->FPC21",
+        "FPC21->FPC12",
+        "FPC21->FPC19"
+      ],
+      "active_edges": [
+        "FPC12->FPC19",
+        "FPC12->FPC21",
+        "FPC19->FPC12",
+        "FPC19->FPC21",
+        "FPC21->FPC12",
+        "FPC21->FPC19"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "W",
+        "S"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC12<->FPC21",
+          "FPC12<->FPC19"
+        ],
+        "expected_edges": [
+          "FPC12->FPC19",
+          "FPC12->FPC21",
+          "FPC19->FPC12",
+          "FPC19->FPC21",
+          "FPC21->FPC12",
+          "FPC21->FPC19"
+        ],
+        "actual_edges": [
+          "FPC12->FPC19",
+          "FPC12->FPC21",
+          "FPC19->FPC12",
+          "FPC19->FPC21",
+          "FPC21->FPC12",
+          "FPC21->FPC19"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "A + D": {
+      "observed_edges": [
+        "FPC11->FPC13",
+        "FPC11->FPC20",
+        "FPC13->FPC11",
+        "FPC13->FPC20",
+        "FPC20->FPC11",
+        "FPC20->FPC13"
+      ],
+      "active_edges": [
+        "FPC11->FPC13",
+        "FPC11->FPC20",
+        "FPC13->FPC11",
+        "FPC13->FPC20",
+        "FPC20->FPC11",
+        "FPC20->FPC13"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "A",
+        "D"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC13<->FPC20",
+          "FPC11<->FPC20"
+        ],
+        "expected_edges": [
+          "FPC11->FPC13",
+          "FPC11->FPC20",
+          "FPC13->FPC11",
+          "FPC13->FPC20",
+          "FPC20->FPC11",
+          "FPC20->FPC13"
+        ],
+        "actual_edges": [
+          "FPC11->FPC13",
+          "FPC11->FPC20",
+          "FPC13->FPC11",
+          "FPC13->FPC20",
+          "FPC20->FPC11",
+          "FPC20->FPC13"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "Left Shift + Left Ctrl": {
+      "observed_edges": [
+        "FPC08->FPC10",
+        "FPC08->FPC24",
+        "FPC10->FPC08",
+        "FPC10->FPC24",
+        "FPC24->FPC08",
+        "FPC24->FPC10"
+      ],
+      "active_edges": [
+        "FPC08->FPC10",
+        "FPC08->FPC24",
+        "FPC10->FPC08",
+        "FPC10->FPC24",
+        "FPC24->FPC08",
+        "FPC24->FPC10"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "Left Shift",
+        "Left Ctrl"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC08<->FPC24",
+          "FPC10<->FPC24"
+        ],
+        "expected_edges": [
+          "FPC08->FPC10",
+          "FPC08->FPC24",
+          "FPC10->FPC08",
+          "FPC10->FPC24",
+          "FPC24->FPC08",
+          "FPC24->FPC10"
+        ],
+        "actual_edges": [
+          "FPC08->FPC10",
+          "FPC08->FPC24",
+          "FPC10->FPC08",
+          "FPC10->FPC24",
+          "FPC24->FPC08",
+          "FPC24->FPC10"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "Left Shift + C": {
+      "observed_edges": [
+        "FPC08->FPC18",
+        "FPC08->FPC24",
+        "FPC18->FPC08",
+        "FPC18->FPC24",
+        "FPC24->FPC08",
+        "FPC24->FPC18"
+      ],
+      "active_edges": [
+        "FPC08->FPC18",
+        "FPC08->FPC24",
+        "FPC18->FPC08",
+        "FPC18->FPC24",
+        "FPC24->FPC08",
+        "FPC24->FPC18"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "Left Shift",
+        "C"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC08<->FPC24",
+          "FPC08<->FPC18"
+        ],
+        "expected_edges": [
+          "FPC08->FPC18",
+          "FPC08->FPC24",
+          "FPC18->FPC08",
+          "FPC18->FPC24",
+          "FPC24->FPC08",
+          "FPC24->FPC18"
+        ],
+        "actual_edges": [
+          "FPC08->FPC18",
+          "FPC08->FPC24",
+          "FPC18->FPC08",
+          "FPC18->FPC24",
+          "FPC24->FPC08",
+          "FPC24->FPC18"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "Fn + Enter": {
+      "observed_edges": [
+        "FPC20->FPC23",
+        "FPC20->FPC25",
+        "FPC23->FPC20",
+        "FPC23->FPC25",
+        "FPC25->FPC20",
+        "FPC25->FPC23"
+      ],
+      "active_edges": [
+        "FPC20->FPC23",
+        "FPC20->FPC25",
+        "FPC23->FPC20",
+        "FPC23->FPC25",
+        "FPC25->FPC20",
+        "FPC25->FPC23"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "Fn",
+        "Enter"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC20<->FPC25",
+          "FPC23<->FPC25"
+        ],
+        "expected_edges": [
+          "FPC20->FPC23",
+          "FPC20->FPC25",
+          "FPC23->FPC20",
+          "FPC23->FPC25",
+          "FPC25->FPC20",
+          "FPC25->FPC23"
+        ],
+        "actual_edges": [
+          "FPC20->FPC23",
+          "FPC20->FPC25",
+          "FPC23->FPC20",
+          "FPC23->FPC25",
+          "FPC25->FPC20",
+          "FPC25->FPC23"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "W + A + Left Shift": {
+      "observed_edges": [
+        "FPC08->FPC24",
+        "FPC12->FPC21",
+        "FPC13->FPC20",
+        "FPC20->FPC13",
+        "FPC21->FPC12",
+        "FPC24->FPC08"
+      ],
+      "active_edges": [
+        "FPC08->FPC24",
+        "FPC12->FPC21",
+        "FPC13->FPC20",
+        "FPC20->FPC13",
+        "FPC21->FPC12",
+        "FPC24->FPC08"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "W",
+        "A",
+        "Left Shift"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC12<->FPC21",
+          "FPC13<->FPC20",
+          "FPC08<->FPC24"
+        ],
+        "expected_edges": [
+          "FPC08->FPC24",
+          "FPC12->FPC21",
+          "FPC13->FPC20",
+          "FPC20->FPC13",
+          "FPC21->FPC12",
+          "FPC24->FPC08"
+        ],
+        "actual_edges": [
+          "FPC08->FPC24",
+          "FPC12->FPC21",
+          "FPC13->FPC20",
+          "FPC20->FPC13",
+          "FPC21->FPC12",
+          "FPC24->FPC08"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "Left Ctrl + Left Shift + Esc": {
+      "observed_edges": [
+        "FPC08->FPC10",
+        "FPC08->FPC24",
+        "FPC10->FPC08",
+        "FPC10->FPC24",
+        "FPC21->FPC26",
+        "FPC24->FPC08",
+        "FPC24->FPC10",
+        "FPC26->FPC21"
+      ],
+      "active_edges": [
+        "FPC08->FPC10",
+        "FPC08->FPC24",
+        "FPC10->FPC08",
+        "FPC10->FPC24",
+        "FPC21->FPC26",
+        "FPC24->FPC08",
+        "FPC24->FPC10",
+        "FPC26->FPC21"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "Left Ctrl",
+        "Left Shift",
+        "Esc"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC10<->FPC24",
+          "FPC08<->FPC24",
+          "FPC21<->FPC26"
+        ],
+        "expected_edges": [
+          "FPC08->FPC10",
+          "FPC08->FPC24",
+          "FPC10->FPC08",
+          "FPC10->FPC24",
+          "FPC21->FPC26",
+          "FPC24->FPC08",
+          "FPC24->FPC10",
+          "FPC26->FPC21"
+        ],
+        "actual_edges": [
+          "FPC08->FPC10",
+          "FPC08->FPC24",
+          "FPC10->FPC08",
+          "FPC10->FPC24",
+          "FPC21->FPC26",
+          "FPC24->FPC08",
+          "FPC24->FPC10",
+          "FPC26->FPC21"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    },
+    "W + A + D": {
+      "observed_edges": [
+        "FPC11->FPC13",
+        "FPC11->FPC20",
+        "FPC12->FPC21",
+        "FPC13->FPC11",
+        "FPC13->FPC20",
+        "FPC20->FPC11",
+        "FPC20->FPC13",
+        "FPC21->FPC12"
+      ],
+      "active_edges": [
+        "FPC11->FPC13",
+        "FPC11->FPC20",
+        "FPC12->FPC21",
+        "FPC13->FPC11",
+        "FPC13->FPC20",
+        "FPC20->FPC11",
+        "FPC20->FPC13",
+        "FPC21->FPC12"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true,
+      "keys": [
+        "W",
+        "A",
+        "D"
+      ],
+      "analysis": {
+        "status": "match",
+        "physical_pairs": [
+          "FPC12<->FPC21",
+          "FPC13<->FPC20",
+          "FPC11<->FPC20"
+        ],
+        "expected_edges": [
+          "FPC11->FPC13",
+          "FPC11->FPC20",
+          "FPC12->FPC21",
+          "FPC13->FPC11",
+          "FPC13->FPC20",
+          "FPC20->FPC11",
+          "FPC20->FPC13",
+          "FPC21->FPC12"
+        ],
+        "actual_edges": [
+          "FPC11->FPC13",
+          "FPC11->FPC20",
+          "FPC12->FPC21",
+          "FPC13->FPC11",
+          "FPC13->FPC20",
+          "FPC20->FPC11",
+          "FPC20->FPC13",
+          "FPC21->FPC12"
+        ],
+        "extra_edges": [],
+        "missing_edges": []
+      }
+    }
+  }
+}

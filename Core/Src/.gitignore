@@ -1,0 +1,31 @@
+# Build directories
+build/
+Debug/
+Release/
+out/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# VS Code local settings
+.vscode/
+
+# STM32CubeIDE / Eclipse files, если появятся
+.settings/
+.metadata/
+*.launch
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.log
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini

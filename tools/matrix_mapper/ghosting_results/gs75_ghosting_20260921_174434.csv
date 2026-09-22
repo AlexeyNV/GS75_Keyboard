@@ -1,0 +1,21 @@
+﻿test;pressed_keys;omitted_key;status;expected_ghost_seen;phantom_candidates;matching_samples;release_confirmed
+1;X + Left Ctrl + U;|\;captured;True;|\;5;True
+2;Space + 6 + G;];captured;True;];4;True
+3;Arrow Right + Arrow Left + Backspace;\;captured;True;\;5;True
+4;W + Esc + N;Numpad 5;captured;True;Numpad 5;5;True
+5;A + Fn + Enter;T;captured;True;T;5;True
+6;Arrow Up + 5 + 7;Scroll Lock;captured;True;Scroll Lock;5;True
+7;Right AltGr + Left Alt + Left Shift;Right Shift;captured;True;Right Shift;5;True
+8;Arrow Down + 1 + L;O;captured;True;O;5;True
+9;R + 9 + Q;F3;captured;True;F3;5;True
+10;4 + Tab + I;Y;captured;True;Y;5;True
+11;3 + 2 + J;U;captured;True;U;5;True
+12;C + 8 + M;Numpad 3 PgDn;captured;True;Numpad 3 PgDn;5;True
+13;V + Left Alt + Y;[;captured;True;[;5;True
+14;Z + Win + Fn;X;captured;True;X;5;True
+15;F + 0 + 6;Space;captured;True;Space;5;True
+16;B + T + Enter;Numpad Enter;captured;True;Numpad Enter;5;True
+17;Right Shift + Right Ctrl + Left Ctrl;Left Shift;captured;True;Left Shift;5;True
+18;7 + O + K;Insert;captured;True;Insert;5;True
+19;Arrow Left + H + P;Arrow Up;captured;True;Arrow Up;5;True
+20;D + Q + Esc;`;captured;True;`;5;True

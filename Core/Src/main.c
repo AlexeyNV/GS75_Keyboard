@@ -23,7 +23,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
+#include "matrix.h"
+#include "matrix_debug.h"
+#include "keyboard_runtime.h"
+#include "usb_keyboard.h"
+#include "usb_device.h"
+#include "runtime_timing.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,16 +49,14 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-static uint8_t rx_byte;
-static char rx_buffer[64];
-static uint8_t rx_index = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 
 /* USER CODE BEGIN PFP */
-static void UART_SendString(const char *str);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -92,14 +95,13 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  UsbKeyboard_Init();
+  Matrix_Init();
+  KeyboardRuntime_Init();
+  RuntimeTiming_Init();
+  UsbDevice_Init();
   HAL_Delay(200);
-
-  UART_SendString("\r\n");
-  UART_SendString("GS75 Keyboard Test Firmware\r\n");
-  UART_SendString("STM32F411RET6\r\n");
-  UART_SendString("SYSCLK = 96 MHz\r\n");
-  UART_SendString("UART1 = 115200 8N1\r\n");
-  UART_SendString("READY\r\n");
+  MatrixDebug_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,50 +109,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-      if (HAL_UART_Receive(&huart1, &rx_byte, 1, 10) == HAL_OK)
-{
-    if ((rx_byte == '\r') || (rx_byte == '\n'))
-    {
-        if (rx_index > 0)
-        {
-            rx_buffer[rx_index] = '\0';
-
-            if (strcmp(rx_buffer, "PING") == 0)
-            {
-                UART_SendString("PONG\r\n");
-            }
-            else if (strcmp(rx_buffer, "INFO") == 0)
-            {
-                UART_SendString("GS75 Keyboard Test Firmware\r\n");
-                UART_SendString("MCU=STM32F411RET6\r\n");
-                UART_SendString("SYSCLK=96000000\r\n");
-                UART_SendString("UART=115200\r\n");
-            }
-            else
-            {
-                UART_SendString("ERR: UNKNOWN COMMAND\r\n");
-            }
-
-            rx_index = 0;
-        }
-    }
-    else
-    {
-        if (rx_index < (sizeof(rx_buffer) - 1))
-        {
-            rx_buffer[rx_index++] = rx_byte;
-        }
-        else
-        {
-            rx_index = 0;
-            UART_SendString("ERR: BUFFER OVERFLOW\r\n");
-        }
-    }
-}
     /* USER CODE BEGIN 3 */
+    UsbKeyboard_Task(HAL_GetTick());
+    MatrixDebug_Process();
   }
-
-  
   /* USER CODE END 3 */
 }
 
@@ -200,13 +162,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-static void UART_SendString(const char *str)
-{
-    HAL_UART_Transmit(&huart1,
-                      (uint8_t *)str,
-                      strlen(str),
-                      HAL_MAX_DELAY);
-}
+
 /* USER CODE END 4 */
 
 /**

@@ -1,0 +1,10 @@
+#ifndef MATRIX_CONFIG_H
+#define MATRIX_CONFIG_H
+
+#define MATRIX_ROWS 8U
+#define MATRIX_COLS 18U
+#define MATRIX_COL_MASK ((1UL << MATRIX_COLS) - 1UL)
+#define MATRIX_SCAN_HZ 1000U
+#define MATRIX_DEBOUNCE_MS 5U
+
+#endif
