@@ -4,9 +4,12 @@
 
 The preceding Boot/NKRO USB stage was hardware-validated by the user.
 Page 07 volume usages 0x80/0x81 did not control Windows volume.
-The new Consumer Control interface and Fn+PrintScreen implementation pass host
-tests and ARM clean build; their hardware validation is still pending.
-The agent did not flash the board. RGB remains absent.
+The Consumer Control implementation and Fn+PrintScreen pass host tests and ARM
+clean build. On Board Rev.2 the user reports working Consumer volume/mute and
+Fn Home/End, all 102 keys and Report-mode USB enumeration. Boot-protocol,
+Fn+PrintScreen SysReq packet content, endpoint stress and suspend/resume have
+not been separately captured on Rev.2. See [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).
+The user flashed the board; the agent did not. RGB remains absent.
 
 ```text
 1 kHz scan -> 5 ms debounce -> full matrix ghost detection

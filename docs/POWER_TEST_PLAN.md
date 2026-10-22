@@ -1,14 +1,16 @@
 # Rev.2 power bench acceptance
 
-**Not yet tested on hardware.** This is a procedure, not a record of results.
-Firmware and host tests are implemented; no automatic flashing or physical test
-was performed. Keep the keyboard RGB controller disconnected throughout.
+**Initial Rev.2 diagnostic bring-up has been reported by the user.** The measured
+values and unrun checks are in [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).
+This document remains the procedure for further tests, not evidence that each
+step passed. Keep the keyboard RGB controller disconnected throughout.
 
 ## 1. Unpowered inspection and BOM
 
 1. Match the assembled PCB revision to HARDWARE_REV2.md and the actual schematic.
-   Resolve U13 Manufacturer Part A3 versus A1; verify the physical part is A1,
-   R30 is 0.05 ohm, R29 1k, C6 100n, and sense polarity follows the input current.
+   The first board was reported to contain INA180A1 despite the schematic
+   Manufacturer Part A3 field; verify marking again before powered load tests.
+   Check R30 is 0.05 ohm, R29 1k, C6 100n and sense polarity.
 2. Continuity-check PC6/PC7 to U12 OUT1/OUT2 and both 10k pull-ups. Check PORT and
    EN_N grounded, ADDR NC, CC1/CC2 routing. Verify R31+R35 are the intended series
    900k VBUS_DET path, not a ground divider or a short to MCU pins.
@@ -142,6 +144,7 @@ link operation. **Do not draw 500mA or alter the current 100mA descriptor in
 this stage.** See the [USB-IF USB 2.0 specification library](https://www.usb.org/documents?search=usb+2.0)
 and [bus-current guidance](https://compliance.usb.org/index.asp?UpdateFile=Electrical).
 
-Audit note: [POWER_AUDIT.md](POWER_AUDIT.md) records confirmed defects and
-remaining restrictions. First power-up must use diagnostic Rev2Debug; bench
-control is a later step after A1 BOM, shunt, meter and stuck-zero tests pass.
+Audit note: [POWER_AUDIT.md](POWER_AUDIT.md) records firmware findings. The
+initial user-run Rev2Debug results are in [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).
+Any bench power control remains a later step after shunt, external-meter,
+second load point and stuck-zero checks pass.

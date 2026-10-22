@@ -224,9 +224,9 @@ The user subsequently validated interrupt RX on hardware on 2026-09-22:
 - RAW/DUMP baseline remains zero and X + Left Ctrl + U detection works.
 - A long command produces ERR: BUFFER OVERFLOW; the next PING returns PONG.
 
-These measurements precede the logical keyboard layer. Keymap/suppression
-have passed host tests and an ARM clean build, but still need board validation.
-No automatic flashing was performed.
+These measurements precede the logical keyboard layer. At that stage,
+keymap/suppression had passed host tests and an ARM clean build but had not
+been checked on the board. Later Rev.2 observations are recorded below.
 
 ## RX checks to retain during logical-layer validation
 
@@ -246,10 +246,18 @@ No automatic flashing was performed.
 
 Logical-layer checks are described in [KEYBOARD_STATE.md](KEYBOARD_STATE.md).
 USB HID with the confirmed Fn translations is now implemented downstream.
-The preceding USB keyboard stage was hardware-validated. The new Consumer
-volume/mute interface and SysReq Fn translation await board validation; RGB
-remains out of scope.
+The preceding USB keyboard stage was hardware-validated. On Rev.2 the user later confirmed Consumer volume/mute behavior; SysReq
+report content still awaits dedicated board validation. RGB remains out of scope.
 The USB IRQ is priority 6, below UART RX priority 5 and above SysTick priority 15.
 Neither UART RX nor the scanner configuration was changed. Recheck 1000 Hz and
 record both maximum durations under USB/UART load; prior hardware timings are
 not measurements of the new USB build.
+
+## Subsequent Board Rev.2 observation
+
+The user reports a running 8 x 18 matrix with all 102 keys working through
+key-test.ru, RAW/DUMP/KEY_COUNT zero at rest, 1000 Hz scanning, 5 ms debounce,
+and the expected Left Ctrl+X+U ghost event followed by CLEAR on release. UART
+reported MAX_SCAN_US=501 and MAX_RUNTIME_US=721/717 in separate checks. These
+are observed maxima, not a worst-case timing proof. The detailed user-run
+record is [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).

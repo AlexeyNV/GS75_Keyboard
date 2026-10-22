@@ -3,7 +3,7 @@
 ## Goal
 Convert the keyboard from an MSI GS75 laptop into a standalone USB keyboard using a custom STM32F411RET6 adapter board.
 
-Current development stage (2026-10-22): Board Rev.2 power diagnostics and protected dummy-load bench control are implemented and independently audited. Host tests pass; hardware validation has not started. Normal builds cannot enable +5V_RGB. Rev.2 hardware validation is pending; the INA180 A1/A3 BOM conflict must be resolved. Earlier keyboard hardware results remain historical; Consumer additions still have no new board evidence. RGB signals/drivers remain unused. See docs/HARDWARE_REV2.md, docs/POWER_MANAGEMENT.md and docs/POWER_TEST_PLAN.md.
+Current stage: the user built and ran Board Rev.2 with Rev2Debug. Core keyboard, all 102 keys, Consumer media shortcuts, ghost diagnostics, USB-C Default attach in both orientations and steady OFF-state power readings have initial hardware evidence. The 151 host tests and independent firmware power audit passed. U13 is confirmed populated as INA180A1. External current, sensor accuracy, TPS2553 switching/protection, suspend current and shutdown latency remain untested. RGB driver/signals are unused. See docs/POWER_TEST_RECORD.md for the exact user-reported measurements and limits; earlier board results remain historical.
 
 ## Hardware
 
@@ -260,11 +260,12 @@ latest resync snapshot changes while the other endpoint remains blocked.
 ARM configure and 47-step clean build passed without warnings/errors:
 FLASH 45,656 bytes (8.71%); RAM 6,920 bytes (5.28%, includes stack/heap reservations).
 Protected modules, clock, GPIO, RX, .ioc and generated CMake remain unchanged.
-The new Consumer implementation has not been flashed or measured on hardware.
+At that earlier stage, the new Consumer implementation had not yet been tested on hardware. The later Rev.2 bring-up confirmed user-observed Consumer volume/mute behavior; see docs/POWER_TEST_RECORD.md.
 
 ## Pending hardware validation
 
-- First validate Rev.2 with Rev2Debug and the blank docs/POWER_TEST_RECORD.md.
+- Rev.2 initial Rev2Debug bring-up is recorded in docs/POWER_TEST_RECORD.md.
+  Complete external-current, suspend, protection and latency tests before enabling RGB power.
 - Recheck the earlier USB additions on the new board per docs/USB_HID.md: two interfaces,
   Fn+PrintScreen SysReq, Windows Consumer volume/mute, Fn/base transition ordering,
   UART overlap and USB recovery with no stuck keys.
@@ -308,9 +309,11 @@ The new Consumer implementation has not been flashed or measured on hardware.
   5 UART/HID integration and 2 invalid CMake configurations. ARM clean
   configurations LegacyDebug, Rev2Debug, Rev2Bench and Rev2BenchVerified pass
   without warnings/errors. Rev2Debug FLASH 51,236 bytes / RAM 7,080 bytes.
-- Hardware-validated: none of this power extension. Not yet tested: ADC accuracy,
-  actual source budgets, switch response time, CC wiring and revised PCB.
-  Future work: recorded bench acceptance and independent RGB controller work.
+- Hardware-validated (initial user report only): Rev2Debug boot, USB-C Default
+  attach in both plug orientations, populated A1, steady PC9 LOW, FAULT# HIGH,
+  +5V_RGB near zero and ADC voltage readback. External total current, calibrated
+  gain/offset, 1.5A/3A sources, suspend, TPS2553 ON/protection and shutdown
+  latency are NOT RUN. See docs/POWER_TEST_RECORD.md for values and provenance.
 - Existing generated-source edits are limited to main.c and stm32f4xx_it.c
   USER CODE hooks. matrix_debug.c is custom-owned; .ioc and generated CMake are unchanged.
 
@@ -330,7 +333,8 @@ The new Consumer implementation has not been flashed or measured on hardware.
   exists. Require external meter and two known-current points before acknowledgement.
 - First board action is diagnostic Rev2Debug only, with RGB controller disconnected
   and PC9 verified LOW. Any power-switch test uses externally limited dummy load.
-- Future hardware work: measure USB suspend input current and investigate a
-  separate USB 2.0 High-Power 500mA revision. The current descriptor and
-  firmware remain at the audited 100mA budget. Use docs/POWER_TEST_RECORD.md
-  to capture measurements; its fields are blank until board tests occur.
+- Future hardware work: external USB current and suspend measurements,
+  two-load INA180 calibration and controlled protection/latency tests. A separate
+  USB 2.0 High-Power 500mA revision is only a feasibility study; the current
+  descriptor and firmware remain at the audited 100mA budget. Planned RGB
+  shortcuts are documented in docs/RGB_BACKLIGHT_PLAN.md, not implemented.

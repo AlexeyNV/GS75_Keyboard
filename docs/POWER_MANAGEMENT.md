@@ -4,10 +4,12 @@
 
 **Implemented:** CC filter, ADC monitor, main-context switch policy, UART commands,
 normal/bench/legacy build selection. **Host-tested:** production logic with GPIO,
-ADC and USB state stubs, plus real RX/parser/TX/HID integration. **Hardware-validated:**
-no new power feature. **Not yet tested:** ADC electrical behavior, board timing,
-assembled BOM, USB-C source compatibility and load switching. **Future work:**
-calibrated VREF acquisition, full board qualification and separate RGB controller.
+ADC and USB state stubs, plus RX/parser/TX/HID integration. **Hardware-validated
+in initial user-run Rev2Debug bring-up:** Default CC in both USB-C orientations,
+steady OFF-state pin voltages, populated A1 and ADC voltage readback. **Not tested:**
+external input current, two-point sensor accuracy, 1.5A/3A sources, USB suspend,
+TPS2553 ON/protection and shutdown latency. See [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).
+**Future work:** full board qualification and separate RGB controller.
 
 ## Build selection and default OFF
 
@@ -195,7 +197,8 @@ Rev2BenchVerified FLASH 51,300 / RAM 7,080 bytes. The build variants and
 evidence are recorded in [POWER_AUDIT.md](POWER_AUDIT.md).
 Compiling an acknowledged bench branch is not hardware verification.
 Detailed hardware acceptance is in [POWER_TEST_PLAN.md](POWER_TEST_PLAN.md).
-Record real measurements in the blank [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).
+Initial user-reported measurements and outstanding tests are in
+[POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).
 Future work includes measured USB suspend current and a separate USB 2.0
 High-Power 500mA feasibility review; the current descriptor remains 100mA.
 

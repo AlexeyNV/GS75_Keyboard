@@ -1,106 +1,109 @@
-﻿# Board Rev.2 power hardware test record
+﻿# Board Rev.2 hardware bring-up record
 
-**Blank template - no measurements or PASS results have been recorded.**
-Make a copy for each board, firmware image and test session. Follow
-[POWER_TEST_PLAN.md](POWER_TEST_PLAN.md) before asserting EN. A diagnostic
-Rev2Debug session is separate from an acknowledged dummy-load bench session.
+**Initial user-reported Rev2Debug bring-up.** Board Rev.2 was built, flashed and
+started by the project owner. The session date, board serial, programmed image
+hash and instrument model were not supplied. This record distinguishes direct
+multimeter voltages from firmware UART readings. No agent operated the board.
+The previous [power audit](POWER_AUDIT.md) preceded this bring-up.
 
-## Identity and traceability
+Result vocabulary: **PASS** = the stated condition was exercised and observed;
+**PARTIAL** = only some parts were checked; **NOT RUN** = no hardware test;
+**FAIL** = a malfunction was observed. No FAIL was reported. An unperformed
+measurement must not be inferred from a passing software test.
 
-| Field | Recorded value |
+## Identity and equipment
+
+| Field | Reported information |
 |---|---|
-| Session ID / date / operator | |
-| PCB revision, assembly ID and board serial | |
-| Schematic revision / U13 populated marking / R30 measured value | |
-| Firmware Git commit or SHA256, preset, CMake power flags | |
-| USB host/hub, port, OS and cable orientation | |
-| Type-C source/fixture, advertised CC mode and current limit setting | |
-| Ambient temperature, load type and wiring diagram reference | |
-| UART log, photo and scope trace filenames | |
+| Hardware | Board Rev.2, built and running; board serial and assembly date not provided |
+| Firmware | Diagnostic Rev2Debug reported; exact flashed binary hash not provided |
+| Project baseline before this record | Git commit `8595d1488ad72be23b59687978f0454f88ef9497`; not independently matched to the flashed binary |
+| U13 | Populated INA180A1IDBVR confirmed by the user; schematic A1/A3 conflict resolved for the reported board |
+| Keyboard | MSI GS75, 26-pin FPC, 8 x 18 matrix and 102 mapped keys reported |
+| USB host, cable, supply | PC enumeration and both USB-C plug orientations reported; host/cable model and source current limit not provided |
+| Multimeter | Used for the five voltages below; manufacturer, model, serial and calibration status not provided |
+| External USB ammeter, oscilloscope, current probe, dummy load | Not used/reported |
+| UART logs, traces, photos | Individual files not supplied; values below are from the user's report |
 
-## Measurement equipment
+The multimeter was **not** used as an external series ammeter. The firmware's
+`CURRENT_MA` is an INA180/ADC-derived estimate, not a separately measured USB
+input current. Do not use it as proof of current-monitor calibration or USB
+power compliance.
 
-| Instrument | Manufacturer/model | Serial or asset ID | Calibration due / verified | Range, probe, burden or accuracy notes |
+## Confirmed observations
+
+| ID | Observation | Source | Result and limit |
+|---|---|---|---|
+| B01 | STM32F411RET6 runs the configured 96 MHz SYSCLK; USB enumerates on the PC | User report | PASS for boot/enumeration; no independent clock-frequency measurement |
+| B02 | `USB_STATE=CONFIGURED`, `USB_PROTOCOL=REPORT`, `USB_LAST_REPORT_SIZE=22` | Firmware UART reported by user | PASS for observed Report/NKRO configuration; Boot mode was not separately exercised in this session |
+| B03 | USB Consumer Control works; Fn+Left/Right volume, Fn+Numpad 0 Mute, Fn+PageUp Home and Fn+PageDown End work | User-observed keyboard behavior | PASS for listed combinations; other Fn paths are not implied |
+| B04 | All keys checked by the user via key-test.ru; 8 x 18 matrix, 102 keys, `SCAN_HZ=1000`, `DEBOUNCE_MS=5` | User report and firmware diagnostics | PASS for reported key behavior and diagnostic values; no independent scan-period trace |
+| B05 | Released baseline `RAW=0`, `DUMP=0`, `KEY_COUNT=0`; Left Ctrl+X+U produces expected ghost event, which clears after release | Firmware UART and user operation | PASS for this baseline and ghost combination |
+| B06 | `MAX_SCAN_US=501`; `MAX_RUNTIME_US=721` and `717` in separate checks | Firmware UART reported by user | PASS for diagnostic readback; these are observed maxima, not certified worst-case bounds |
+| B07 | Both USB-C plug orientations work; `ATTACHED_DEFAULT`, `CC_RAW=2`, `CC_STABLE=2`, `CC_VALID=1`, `USB_CONFIGURED=1`, `USB_SUSPENDED=0` | User operation and firmware UART | PASS for Default-source attach in both orientations; 1.5A/3A and USB-A-to-C not tested |
+| B08 | VDD STM32 = 3.29 V; PA3/INA_CUR = 29.6 mV; PC9/BUS_EN = 0 V; PB4/FAULT# = 3.285 V; +5V_RGB = 15 mV | **Multimeter**, user report | PASS for steady Rev2Debug voltages only; reset transients and switch-on not measured |
+| B09 | `ADC_RAW=36`, `ADC_MV=29`, `CURRENT_MA=29`, `MIN_MA=26–27`, `MAX_MA=32`, `VALID=1`, `BASELINE_MA=29` | **Firmware UART**, user report | PARTIAL: ADC readback agrees approximately with PA3 voltage; gain/offset accuracy not validated |
+| B10 | `BUDGET_MA=100`, `PORT_CONFIG_OK=1`, `FAULT_ACTIVE=0`, `RGB_POWER=0`; `PWRON=BENCH_DISABLED` | **Firmware UART**, user report | PASS for observed diagnostic interlock; no powered RGB-branch protection test |
+
+## Power test plan tracking
+
+The original test IDs from [POWER_TEST_PLAN.md](POWER_TEST_PLAN.md) remain below.
+Blank measurements are marked **not measured**, not silently filled from ADC
+estimates. Reported steady-state values do not prove reset or fault latency.
+
+| ID / condition | External USB current | Relevant measured voltage / UART evidence | Timing | Result |
 |---|---|---|---|---|
-| USB VBUS current meter | | | | |
-| DMM for VDDA, PA3 and shunt | | | | |
-| Oscilloscope / logic analyzer | | | | |
-| Current probe or shunt monitor | | | | |
-| Current-limited supply / Type-C fixture | | | | |
-| Electronic dummy load | | | | |
+| R01 Reset and pre-init EN LOW | Not measured | Steady PC9=0 V and +5V_RGB=15 mV only (multimeter) | Reset waveform not captured | **PARTIAL** |
+| R02 Rev2Debug configured, idle keyboard, Default CC | Not measured | PC9=0 V, PB4=3.285 V, PA3=29.6 mV (multimeter); CURRENT_MA=29, BUDGET_MA=100, PWRON=BENCH_DISABLED (UART) | Not measured | **PASS** for diagnostic behavior; current accuracy remains open |
+| R03 Rev2Debug with 1.5A CC | Not measured | Not measured | Not measured | **NOT RUN** |
+| R04 Rev2Debug with 3A CC | Not measured | Not measured | Not measured | **NOT RUN** |
+| R05 USB-C both connector orientations | Not measured | Default CC code 2 and USB operation in both orientations (UART/user report) | Not measured | **PASS** for USB-C orientation; USB-A-to-C **NOT RUN** |
+| R06 USB unconfigured / disconnected state | Not measured | Not measured | Not measured | **NOT RUN** |
+| R07 USB suspend current | Not measured | `USB_SUSPENDED=0` during active checks (UART) | Not measured | **NOT RUN** |
+| R08 USB resume / reconnect | Not measured | Not measured | Not measured | **NOT RUN** |
+| R09 INA180 no-load plus two known external-current points | External current not measured | U13 A1 confirmed; PA3=29.6 mV (multimeter); ADC_MV=29 and CURRENT_MA=29 (UART) | Not measured | **PARTIAL**; two-point slope/offset unverified |
+| R10 Stuck-low/open sensor fault injection | Not measured | Not measured | Not measured | **NOT RUN** |
+| R11 Verified bench +5V_RGB with dummy load | Not measured | RGB_POWER=0 and +5V_RGB=15 mV while OFF | Not measured | **NOT RUN** for ON test |
+| R12 PWROFF while ON / rail discharge | Not measured | Not measured | Not measured | **NOT RUN** |
+| R13 FAULT# LOW while ON | Not measured | Idle PB4=3.285 V (multimeter), FAULT_ACTIVE=0 (UART) only | Not measured | **NOT RUN** for fault injection |
+| R14 FAULT# during DUMP/RAW/PWRINFO | Not measured | Not measured | Not measured | **NOT RUN** |
+| R15 Software overcurrent while ON | Not measured | Not measured | Not measured | **NOT RUN** |
+| R16 ADC timeout/saturation while ON | Not measured | Not measured | Not measured | **NOT RUN** |
+| R17 USB suspend or CC loss while ON | Not measured | Not measured | Not measured | **NOT RUN** |
+| R18 Controlled HardFault / Error_Handler | Not measured | Not measured | Not measured | **NOT RUN** |
+| R19 Keyboard/HID plus UART overlap | Not measured | Keyboard, listed Fn functions and ghost behavior work; no simultaneous UART-overlap run reported | MAX_SCAN_US=501; MAX_RUNTIME_US=721/717 (UART) | **PARTIAL** |
 
-Record meter insertion point and whether USB current includes the entire adapter.
-For the oscilloscope, record probe attenuation, bandwidth limit, trigger threshold
-and a shared timebase for FAULT# and EN. Record uncertainty or instrument accuracy
-for every current and timing comparison.
+## Future USB 2.0 High-Power 500 mA feasibility
 
-## Measurements
+**NOT RUN.** The active USB configuration still declares 100 mA. No external
+USB-current or suspend-current measurement has been made. A future 500 mA
+descriptor/policy change requires a separate hardware and compliance review;
+this record does not authorize higher current or RGB power.
 
-Use **NOT RUN / PASS / FAIL** in the result column. Keep raw data and trace
-references even after a failure. Limits must be set from the applicable USB
-specification and the selected test topology before judging a result; a host
-test passing does not populate this table.
-
-| ID / condition | USB input current mA (average / peak) | VDDA V / VBUS V / PA3 mV / shunt mV | EN V / +5V_RGB V / FAULT# V | Reaction time ms (trigger to EN LOW) | Expected observation / evidence | Result / trace |
-|---|---|---|---|---|---|---|
-| R01 Reset and pre-init, RGB controller absent | | | | | EN LOW, +5V_RGB OFF | |
-| R02 Rev2Debug configured, idle keyboard, Default CC | | | | | PWRON denied; record baseline | |
-| R03 Rev2Debug configured, 1.5A CC | | | | | BUDGET_MA=100; EN LOW | |
-| R04 Rev2Debug configured, 3A CC | | | | | BUDGET_MA=100; EN LOW | |
-| R05 USB-A-to-C, both connector orientations where applicable | | | | | CC code and budget recorded | |
-| R06 USB unconfigured / disconnected | | | | | EN LOW; log USB/CC state | |
-| R07 USB suspend, after settling | | | | | Measure **total USB bus suspend current** and EN/rail state; compare with applicable limit | |
-| R08 USB resume / reconnect | | | | | No automatic power-on; current recovers to measured baseline | |
-| R09 Sensor no-load and two known currents, externally metered | | | | | Confirm INA180A1 slope/offset and PA3 continuity | |
-| R10 Stuck-low/open sensor fault injection, controlled fixture | | | | | Record diagnostic limitation and external-meter discrepancy | |
-| R11 Verified bench: small dummy load below 100mA total | | | | | PWRON only after hardware gates; log total current | |
-| R12 PWROFF while ON | | | | | EN LOW; measure rail discharge separately | |
-| R13 FAULT# LOW while idle | | | | | EN LOW, fault latched | |
-| R14 FAULT# LOW during DUMP / RAW / PWRINFO | | | | | EN LOW; capture worst observed delay across repeated trials | |
-| R15 Software overcurrent during ON | | | | | EN LOW, fault latched; compare ADC to meter | |
-| R16 ADC timeout/saturation during ON | | | | | EN LOW, ADC_INVALID latch | |
-| R17 USB suspend or CC loss during ON | | | | | EN LOW, no auto-restart | |
-| R18 Controlled HardFault / Error_Handler bench test | | | | | Best-effort EN LOW; note no full-hang guarantee | |
-| R19 Keyboard/HID plus UART overlap | | | | | Preserve scanning and no stuck keys; record MAX_SCAN_US | |
-
-For R07, record suspend entry and measurement settling time, remote-wakeup
-configuration, CC advertisement, cable, host/hub and whether the source itself
-remains active. Repeat with the RGB branch OFF and, only after separate safe bench
-qualification, with ON-to-suspend shutdown. Measure the applicable USB 2.0 suspend
-limit for this topology from the current specification/ECN; do not infer
-compliance from the firmware's EN=LOW alone.
-
-## Future USB 2.0 High-Power 500mA feasibility - research only
-
-**No 500mA operation is authorized by this firmware or this record.** The active
-configuration currently declares 100mA. USB 2.0 *High-Power* is a power category,
-not a claim that the STM32 USB link operates at High-Speed. Investigate a separate
-future descriptor/policy revision only after the following data are recorded.
-
-| Question / calculation | Measured data, source or analysis | Decision / evidence |
+| Question | Measured result | Status |
 |---|---|---|
-| Total board baseline and peak current in configured, unconfigured and suspend states | | |
-| Additional load current available after baseline, margins and measurement uncertainty | | |
-| 3.3V regulator, TPS2553, connector, PCB traces and shunt thermal headroom | | |
-| Host/hub and USB-A-to-C / Type-C source compatibility and advertised current | | |
-| Applicable USB 2.0 High-Power descriptor, configuration, suspend and compliance requirements | | |
-| Required firmware, descriptor and regression-test changes for a future separate stage | | |
-| Go/no-go for proposing a 500mA-capable revision (not permission to energize) | | |
+| Configured, unconfigured and suspend USB input current | Not measured | **NOT RUN** |
+| Load headroom after baseline and uncertainty | Not measured | **NOT RUN** |
+| Regulator, TPS2553, shunt, connector and PCB thermal headroom | Not measured | **NOT RUN** |
+| Host/hub, USB-A-to-C and Type-C source compatibility | Default USB-C orientations only | **PARTIAL** |
+| Descriptor, suspend and compliance requirements for a future revision | Not assessed in hardware | **NOT RUN** |
 
-Relevant primary references: [USB-IF USB 2.0 specification and suspend-current
-ECN](https://www.usb.org/documents?search=usb+2.0) and
-[USB-IF bus-current compliance guidance](https://compliance.usb.org/index.asp?UpdateFile=Electrical).
-The applicable limits and revision must be recorded in the test session.
+Primary references remain the [USB-IF USB 2.0 specification and
+suspend-current ECN](https://www.usb.org/documents?search=usb+2.0) and
+[USB-IF bus-current guidance](https://compliance.usb.org/index.asp?UpdateFile=Electrical).
 
 ## Session conclusion
 
-| Gate | PASS / FAIL / NOT RUN | Evidence, restrictions and next action |
+| Gate | Status | Evidence / next action |
 |---|---|---|
-| Diagnostic Rev2Debug safe to run | | |
-| INA180A1 BOM and current measurement validated | | |
-| +5V_RGB dummy-load test safe to attempt | | |
-| Shutdown latency characterized on this board | | |
-| USB suspend current assessed | | |
-| High-Power 500mA feasibility study complete | | |
+| Initial Rev2Debug USB/keyboard/CC/steady-OFF bring-up | **PASS** | User-reported boot, key checks, both USB-C orientations, multimeter and UART observations above |
+| Full reset/pre-init EN behavior | **PARTIAL** | Steady LOW only; oscilloscope capture still needed |
+| INA180A1 identity | **PASS** | User confirmed populated A1 |
+| INA180 current accuracy and continuity | **PARTIAL** | One voltage/readback point only; external ammeter and two known loads still needed |
+| TPS2553 powered switching, fault/overcurrent protection and shutdown delay | **NOT RUN** | Keep +5V_RGB OFF; use controlled dummy-load fixture later |
+| USB suspend input current and 500 mA feasibility | **NOT RUN** | Measure and review in a separate stage |
+| RGB controller and backlight | **NOT RUN** | Not connected; firmware driver not implemented |
 
-Reviewed by: ____________________    Date: ____________________
+Equipment identity, calibration certificates, raw UART logs, photos, scope
+traces and individual test timestamps were not provided; no placeholders above
+should be read as measurements.

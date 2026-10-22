@@ -170,3 +170,10 @@ The USB suite rechecks all 20 ghost fixtures and the X+Left Ctrl -> add U ->
 release X -> release all sequence through actual reports. Fn itself stays in
 KEYS, while the downstream effective HID state contains only translated usages.
 See [USB board acceptance](USB_HID.md#board-acceptance-manual-flashing-only).
+
+## Subsequent Board Rev.2 observation
+
+The user reports that all keys work on Rev.2 and that Left Ctrl+X+U produces
+the expected ghost event which clears after release. This verifies the reported
+keyboard behavior, not every temporal suppression edge case or a worst-case
+scan bound. See [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md).

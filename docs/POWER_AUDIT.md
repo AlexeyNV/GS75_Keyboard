@@ -1,6 +1,6 @@
 ﻿# Board Rev.2 power: independent audit
 
-2026-10-22. Scope: source, schematic, host tests and clean ARM builds. **No Rev.2 board was flashed or tested.** The available schematic is `hardware/schematics/SCH_keyboard.json`; the requested dated export was absent.
+2026-10-22. Scope: source, schematic, host tests and clean ARM builds. **At audit time, no Rev.2 board had been flashed or tested.** The available schematic is `hardware/schematics/SCH_keyboard.json`; the requested dated export was absent.
 
 ## Findings
 
@@ -45,12 +45,21 @@ Clean ARM configure/build passed without warnings/errors, 52 steps per variant:
 | Rev2Bench | 51,236 B | 7,080 B | Rev2 ON, bench ON, verified OFF |
 | Rev2BenchVerified | 51,300 B | 7,080 B | All three ON |
 
-Cache gates were inspected. No flashing, hardware measurement, commit or push occurred.
+Cache gates were inspected. No flashing, hardware measurement, commit or push occurred during that software-only audit.
 
-**GO only for controlled diagnostic Rev2Debug first power-up**, after unpowered PCB/BOM inspection, with RGB controller disconnected and PC9/+5V_RGB scoped through reset and enumeration. PWRON must report BENCH_DISABLED and EN remain LOW. Run CC/USB/ADC and keyboard/HID diagnostics per [POWER_TEST_PLAN.md](POWER_TEST_PLAN.md).
+**Pre-bring-up audit decision: GO only for controlled diagnostic Rev2Debug first power-up**, after unpowered PCB/BOM inspection, with RGB controller disconnected and PC9/+5V_RGB scoped through reset and enumeration. PWRON must report BENCH_DISABLED and EN remain LOW. Run CC/USB/ADC and keyboard/HID diagnostics per [POWER_TEST_PLAN.md](POWER_TEST_PLAN.md).
 
-**NO-GO for +5V_RGB enable yet.** First resolve U13 A1/A3, check R30/sense polarity, PC9 pull-down and TPS2553, measure VDDA/PA3 against an external meter at no load and two known currents, evaluate stuck-zero/open-wire behavior, and confirm headroom below 100mA total USB draw. Only then consider the acknowledged bench build with a low-current dummy load and externally limited source. Record board identity, firmware hash, meter and scope traces in the blank
+**NO-GO for +5V_RGB enable yet.** First resolve U13 A1/A3, check R30/sense polarity, PC9 pull-down and TPS2553, measure VDDA/PA3 against an external meter at no load and two known currents, evaluate stuck-zero/open-wire behavior, and confirm headroom below 100mA total USB draw. Only then consider the acknowledged bench build with a low-current dummy load and externally limited source. Record board identity, firmware hash, meter and scope traces in the
 [hardware test record](POWER_TEST_RECORD.md) before claiming protection latency
 or connecting RGB hardware. Future measurements include USB suspend current; a
 USB 2.0 High-Power 500mA option requires a separate feasibility and compliance
 review, with no change to this baseline descriptor or firmware.
+
+## Subsequent user-run bring-up
+
+After the software-only audit, the user built and ran Board Rev.2 with
+Rev2Debug. The steady OFF state, USB-C Default attach, keyboard and initial ADC
+readback are documented in [POWER_TEST_RECORD.md](POWER_TEST_RECORD.md). The A1
+part is physically confirmed; external-current calibration, switch-on, fault
+response, USB suspend and timing still have no hardware test. The audit's
+conditional NO-GO for +5V_RGB enable remains in force.

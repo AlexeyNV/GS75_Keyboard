@@ -1,9 +1,12 @@
 # Board Rev.2: hardware review (2026-10-22)
 
-Status: **Implemented** firmware adaptation; **Host-tested** logic; **Hardware-validated**:
-none of the new power functions. **Not yet tested**: assembled board, ADC accuracy,
-CC detection, switch protection and latency. **Future work**: verified RGB controller.
-The earlier keyboard hardware results remain historical evidence, not Rev.2 acceptance.
+Status: **Implemented** firmware adaptation; **Host-tested** power logic;
+**Hardware-validated in the initial user-run Rev2Debug session:** USB-C Default
+attach in both orientations, populated INA180A1 identity, steady OFF-state
+voltages and ADC readback. **Not validated:** calibrated current, Type-C 1.5A/3A,
+USB suspend current, TPS2553 switching/protection or shutdown latency. See the
+[measured bring-up record](POWER_TEST_RECORD.md). Earlier keyboard hardware
+results remain historical; Rev.2 keyboard results are recorded separately.
 
 ## Schematic evidence and ownership
 
@@ -53,7 +56,8 @@ and R18/R22 on RGB_INT are marked DNP; confirm assembly rather than assuming pul
   OUT -> R29 1k -> PA3, C6 100n to GND. U13 V+ is VDD.
 - **BOM discrepancy**: U13 display/symbol says INA180A1IDBVR, Manufacturer Part
   says INA180A3IDBVR. Correct the BOM and inspect the populated part. Firmware
-  targets A1 gain 20, not A3 gain 100. No software gain workaround is selected.
+  targets A1 gain 20, not A3 gain 100. No software gain workaround is selected. The user later confirmed an A1 part
+on the built Rev.2 board; gain and current accuracy still need two-load metering.
 - U15 TPS2553DBVR: EN active high, FAULT active low, ILIM R33 30k to GND,
   OUT to +5V_RGB. The requested datasheet estimates are 796/863/939 mA min/nom/max
   for the RGB branch, before resistor tolerance. This hardware threshold is not
@@ -62,9 +66,9 @@ and R18/R22 on RGB_INT are marked DNP; confirm assembly rather than assuming pul
   Firmware adds a persistent fault latch; it is not a substitute for fast hardware
   protection or an externally current-limited bench supply.
 
-No additional power-pin contradiction was found in this JSON. The A1/A3 mismatch
-prevents assuming the assembled monitor is correct: PWRON also requires an explicit
-bench hardware-verification build flag. This acknowledges an actual operator check;
+No additional power-pin contradiction was found in this JSON. The A1/A3 mismatch in the schematic remains a documentation/BOM correction.
+Physical A1 identity alone does not validate the assembled current monitor:
+PWRON also requires an explicit bench hardware-verification build flag. This acknowledges an actual operator check;
 it does not certify the board or enable automatic RGB power.
 
 ## Engineering choices and limits
@@ -87,8 +91,8 @@ only the RGB branch; keeping both protections separates fast hardware limiting
 from the source-dependent total-board budget.
 
 See [power policy](POWER_MANAGEMENT.md), [bench procedure](POWER_TEST_PLAN.md)
-and the blank [hardware test record](POWER_TEST_RECORD.md). Rev.2 power
-hardware validation has not started.
+and the [initial hardware test record](POWER_TEST_RECORD.md). Initial steady
+diagnostics were observed; powered load and protection validation has not started.
 Component sources checked: [TI TUSB320LAI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf),
 [TI INA180](https://www.ti.com/product/INA180),
 [TI TPS2553](https://www.ti.com/lit/ds/symlink/tps2553.pdf).
