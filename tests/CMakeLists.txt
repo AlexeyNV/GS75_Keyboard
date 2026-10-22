@@ -4,8 +4,11 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
+set(POWER_SOURCES ../Core/Src/usb_c_detect.c ../Core/Src/current_monitor.c
+    ../Core/Src/power_manager.c ../Core/Src/power_debug.c power_harness.c)
 # Compile the actual firmware logic; only hardware/UART access is stubbed.
 add_library(matrix_test SHARED
+    ${POWER_SOURCES}
     ../Core/Src/matrix_debounce.c
     ../Core/Src/anti_ghosting.c
     ../Core/Src/matrix_debug.c
@@ -65,3 +68,43 @@ add_test(NAME consumer_regression
     COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_consumer.py
             $<TARGET_FILE:matrix_test> $<TARGET_FILE:hid_volume_off_test>
 )
+
+foreach(variant IN ITEMS normal bench unverified legacy)
+    add_library(power_${variant} SHARED ${POWER_SOURCES})
+    target_include_directories(power_${variant} PRIVATE ../Core/Inc)
+    if(NOT variant STREQUAL "legacy")
+        target_compile_definitions(power_${variant} PRIVATE GS75_BOARD_REV2=1)
+    endif()
+    if(variant STREQUAL "bench" OR variant STREQUAL "unverified")
+        target_compile_definitions(power_${variant} PRIVATE GS75_RGB_POWER_BENCH_TEST=1)
+    endif()
+    if(variant STREQUAL "bench")
+        target_compile_definitions(power_${variant} PRIVATE GS75_POWER_HARDWARE_VERIFIED=1)
+    endif()
+    if(MSVC)
+        target_compile_options(power_${variant} PRIVATE /W4 /WX)
+    else()
+        target_compile_options(power_${variant} PRIVATE -Wall -Wextra -Werror)
+    endif()
+endforeach()
+add_test(NAME power_regression COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_power.py $<TARGET_FILE:power_bench>
+    $<TARGET_FILE:power_normal> $<TARGET_FILE:power_unverified> $<TARGET_FILE:power_legacy>)
+
+# Full UART/HID integration with the bench power policy; same production sources.
+get_target_property(MATRIX_SOURCES matrix_test SOURCES)
+add_library(matrix_power_test SHARED ${MATRIX_SOURCES})
+target_include_directories(matrix_power_test PRIVATE stubs ../Core/Inc
+    ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc)
+target_compile_definitions(matrix_power_test PRIVATE GS75_BOARD_REV2=1
+    GS75_RGB_POWER_BENCH_TEST=1 GS75_POWER_HARDWARE_VERIFIED=1)
+if(MSVC)
+    target_compile_options(matrix_power_test PRIVATE /W4 /WX)
+else()
+    target_compile_options(matrix_power_test PRIVATE -Wall -Wextra -Werror)
+endif()
+add_test(NAME power_uart_regression COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_power_uart.py $<TARGET_FILE:matrix_power_test>)
+
+add_test(NAME power_build_flags COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_build_flags.py ${CMAKE_COMMAND})

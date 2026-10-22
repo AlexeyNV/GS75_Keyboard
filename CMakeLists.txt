@@ -62,6 +62,11 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/usbd_keyboard.c
     Core/Src/usb_device.c
     Core/Src/runtime_timing.c
+    Core/Src/usb_c_detect.c
+    Core/Src/current_monitor.c
+    Core/Src/power_manager.c
+    Core/Src/power_debug.c
+    Core/Src/power_port_stm32.c
     Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c
     Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c
     Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c
@@ -84,10 +89,22 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add project symbols (macros)
 set(GS75_USB_VID "0x0483" CACHE STRING "USB VID: ST example default is prototype-only")
 set(GS75_USB_PID "0x5710" CACHE STRING "USB PID: ST example default is prototype-only")
+option(GS75_BOARD_REV2 "Enable Rev.2 GPIO/ADC diagnostics (legacy board default OFF)" OFF)
+option(GS75_RGB_POWER_BENCH_TEST "Permit explicit protected dummy-load test commands" OFF)
+option(GS75_POWER_HARDWARE_VERIFIED "Bench operator verified A1 BOM, wiring and dummy load" OFF)
+if(GS75_RGB_POWER_BENCH_TEST AND NOT GS75_BOARD_REV2)
+    message(FATAL_ERROR "Bench power testing requires GS75_BOARD_REV2=ON")
+endif()
+if(GS75_POWER_HARDWARE_VERIFIED AND NOT GS75_RGB_POWER_BENCH_TEST)
+    message(FATAL_ERROR "Hardware acknowledgement requires GS75_RGB_POWER_BENCH_TEST=ON")
+endif()
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
     GS75_USB_VID=${GS75_USB_VID}
     GS75_USB_PID=${GS75_USB_PID}
+    GS75_BOARD_REV2=$<BOOL:${GS75_BOARD_REV2}>
+    GS75_RGB_POWER_BENCH_TEST=$<BOOL:${GS75_RGB_POWER_BENCH_TEST}>
+    GS75_POWER_HARDWARE_VERIFIED=$<BOOL:${GS75_POWER_HARDWARE_VERIFIED}>
 )
 
 # Remove wrong libob.a library dependency when using cpp files

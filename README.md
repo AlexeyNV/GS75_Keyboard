@@ -4,7 +4,7 @@ Custom firmware for an **STM32F411RET6-based USB adapter** that allows the keybo
 
 The project covers **keyboard matrix scanning, key processing, USB HID and firmware diagnostics**. It is based on a measured key matrix rather than the original laptop's keyboard controller.
 
-> **Project status: active development.** The previous adapter board was used to validate matrix scanning and the core USB keyboard functionality. A revised PCB has since been assembled; its pin mapping, firmware adaptation and hardware validation are the next steps. The current `main` branch must **not** be assumed to be ready for the new PCB.
+> **Board Rev.2 diagnostic baseline:** firmware adaptation is implemented, 151 host tests and the engineering audit are complete, and clean ARM builds pass. Board Rev.2 has **not** been hardware-tested; assembly status is not established by the sources in this repository. Earlier matrix and core USB results were obtained on the previous adapter board. Do not treat this baseline as a validated Rev.2 firmware release.
 
 ## Features
 
@@ -48,7 +48,7 @@ The accepted logical state is translated into USB HID reports. Time-sensitive sc
 | Programming/debugging | SWD / ST-LINK |
 | Diagnostics | USART1 UART, 115200 baud, 8N1 |
 
-**Hardware revision note:** The GPIO/FPC wiring in the current firmware documentation refers to the previously tested adapter board. It may change as support for the newly assembled PCB is introduced. Always check the PCB schematic and the firmware configuration for the *same hardware revision* before flashing.
+**Hardware revision note:** The 8 × 18 keyboard matrix and FPC map were measured on the earlier adapter. Rev.2 power GPIO/ADC assignments are implemented from the available schematic, but the physical connections and keyboard behavior on Rev.2 remain unverified. Check the actual board against the matching schematic before any later flashing or connection.
 
 Current firmware details and the earlier pin mapping are recorded in [`CODEX_CONTEXT.md`](CODEX_CONTEXT.md) and [`docs/MATRIX_RUNTIME.md`](docs/MATRIX_RUNTIME.md).
 
@@ -72,7 +72,8 @@ Implemented Fn mappings include navigation functions and volume/mute shortcuts. 
 | `Core/` | Application firmware and keyboard logic |
 | `Drivers/` | STM32 HAL/CMSIS components |
 | `Middlewares/ST/` | STM32 USB Device middleware |
-| `docs/` | Matrix runtime, keyboard state, USB HID and keymap documentation |
+| `docs/` | Matrix/HID documentation, Rev.2 audit and hardware test plan |
+| `hardware/schematics/` | Available Rev.2 schematic export |
 | `tests/` | Host-side regression tests |
 | `tools/matrix_mapper/` | Matrix mapping tools and captured experimental data |
 | `GS75_Keyboard.ioc` | STM32CubeMX configuration |
@@ -91,9 +92,9 @@ The firmware project uses **STM32CubeMX**, **CMake**, **Ninja** and the **Arm GN
 
 2. Install the Arm embedded build toolchain, CMake and Ninja (or use STM32CubeCLT).
 3. Open the project in VS Code, select the CMake preset from `CMakePresets.json`, configure and build.
-4. Program a **compatible PCB revision** with ST-LINK over SWD. Confirm the actual FPC-to-GPIO mapping before connecting the laptop keyboard or running the firmware.
+4. For later physical tests, verify the board revision and BOM first, then follow the diagnostic-only first-power procedure before connecting the keyboard or any RGB hardware.
 
-Detailed USB/HID build and hardware-check notes are in [`docs/USB_HID.md`](docs/USB_HID.md). The current source tree is a development snapshot, **not a validated firmware release for the new PCB**.
+Detailed USB/HID build and hardware-check notes are in [`docs/USB_HID.md`](docs/USB_HID.md). The current source tree is a diagnostic baseline, **not a hardware-validated Rev.2 firmware release**.
 
 ## Testing and validation
 
@@ -105,17 +106,46 @@ The development history records the following results on the **earlier adapter h
 - Core USB keyboard operation verified on physical hardware.
 - A documented set of **104 host-side tests** passed for the firmware changes covering the added Consumer Control interface; **hardware verification of those additions was still pending**.
 
-These results describe the tested firmware/hardware stage and **must not be read as acceptance test results for the newly assembled PCB**.
+These results describe the earlier firmware/hardware stage and **are not Rev.2 acceptance results**.
 
 Further technical details: [`docs/MATRIX_RUNTIME.md`](docs/MATRIX_RUNTIME.md), [`docs/KEYBOARD_STATE.md`](docs/KEYBOARD_STATE.md), [`docs/USB_HID.md`](docs/USB_HID.md) and [`docs/HID_KEYMAP.csv`](docs/HID_KEYMAP.csv).
 
+## Board Rev.2 power management (2026-10-22)
+
+Implemented, host-tested and independently audited: TUSB320 GPIO attach/current
+diagnostics, INA180A1 ADC current monitoring, TPS2553 software fault latch and
+explicit bench commands. Rev.2 hardware testing has not begun.
+
+**Hardware validation is pending.** Normal Rev2Debug builds keep +5V_RGB OFF;
+Rev2Bench additionally requires a verified-hardware acknowledgement before explicit
+PWRON. LegacyDebug preserves old-board compatibility. U13 A1/A3 BOM inconsistency
+must be resolved on any assembled board before power testing. RGB SPI/PWM/LED
+control is not implemented.
+
+- [Hardware connections and review](docs/HARDWARE_REV2.md)
+- [Power policy, UART commands and build presets](docs/POWER_MANAGEMENT.md)
+- [Exact manual bench procedure and acceptance evidence](docs/POWER_TEST_PLAN.md)
+- [Blank hardware measurement record](docs/POWER_TEST_RECORD.md)
+
+151 host tests in seven CTest suites pass; ARM clean builds pass without warnings or
+errors. These results do not validate electrical behavior or ADC accuracy.
+
+The Rev.2 power audit caps the firmware's effective budget to the current
+descriptor's 100mA in all Type-C modes and documents the absence of a
+hardware OFF mechanism for a fully hung MCU. See [audit findings](docs/POWER_AUDIT.md)
+before board tests.
+
+Future board measurements include USB suspend current and a separate feasibility
+study for USB 2.0 High-Power 500mA; no descriptor or firmware change is part of
+this baseline.
+
 ## Next steps
 
-- [ ] Update board-specific GPIO configuration for the revised PCB.
-- [ ] Verify power, SWD, UART and USB operation on the assembled board.
-- [ ] Repeat matrix/keymap and ghosting checks on the new hardware.
-- [ ] Verify keyboard, NKRO/6KRO, Fn and Consumer Control behavior on a host PC.
-- [ ] Publish updated PCB photographs, validated firmware status and reproducible test results.
+- [ ] Confirm the actual Rev.2 PCB assembly and BOM, especially the INA180A1/A3 discrepancy, before applying power.
+- [ ] Run diagnostic-only Rev2Debug first-power checks with RGB disconnected; measure PC9, USB power, ADC and CC behavior using the blank hardware test record.
+- [ ] Measure total USB current during suspend, current-sensor accuracy at two known loads and fault-to-EN shutdown latency.
+- [ ] Repeat matrix, ghosting, Boot/NKRO, Fn and Consumer Control tests on Rev.2 hardware and publish measured results.
+- [ ] Investigate a separate USB 2.0 High-Power 500mA revision only after the current 100mA configuration is validated; keep RGB controller work separate.
 
 ## Scope
 

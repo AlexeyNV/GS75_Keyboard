@@ -29,6 +29,8 @@
 #include "usb_keyboard.h"
 #include "usb_device.h"
 #include "runtime_timing.h"
+#include "power_manager.h"
+#include "power_port.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,6 +97,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  PowerManager_Init();
   UsbKeyboard_Init();
   Matrix_Init();
   KeyboardRuntime_Init();
@@ -111,6 +114,7 @@ int main(void)
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
     UsbKeyboard_Task(HAL_GetTick());
+    PowerManager_Task(HAL_GetTick());
     MatrixDebug_Process();
   }
   /* USER CODE END 3 */
@@ -172,7 +176,8 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
+  /* Best-effort LOW before the infinite error loop. */
+  PowerPort_EmergencyOff();
   __disable_irq();
   while (1)
   {

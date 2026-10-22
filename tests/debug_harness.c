@@ -19,6 +19,9 @@ static uint8_t irq_enabled;
 static uint8_t in_irq;
 static uint32_t harness_errors;
 static uint8_t mutate_on_send;
+static uint8_t power_fault_on_send;
+void PowerTest_Set(uint32_t code, uint32_t raw, int result, uint32_t flags);
+void Test_PowerFaultDuringTx(void) { power_fault_on_send = 1; }
 static char output[32768];
 static size_t output_length;
 static char during_tx[2048];
@@ -108,6 +111,11 @@ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *uart, uint8_t *data,
         {
             Receive((uint8_t)during_tx[during_tx_index++], 0);
         }
+    }
+    if (power_fault_on_send)
+    {
+        power_fault_on_send = 0;
+        PowerTest_Set(1, 62, 1, 11); /* FAULT changes while main is in TX. */
     }
     if (logical_tx_index < logical_tx_length)
     {

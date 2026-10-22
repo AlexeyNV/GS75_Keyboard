@@ -6,22 +6,54 @@
             "hidden": true,
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
-		    "toolchainFile": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake",
-            "cacheVariables": {
-            }
+            "toolchainFile": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake",
+            "cacheVariables": {}
         },
         {
             "name": "Debug",
             "inherits": "default",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_BUILD_TYPE": "Debug",
+                "GS75_BOARD_REV2": "OFF",
+                "GS75_RGB_POWER_BENCH_TEST": "OFF",
+                "GS75_POWER_HARDWARE_VERIFIED": "OFF"
             }
         },
         {
             "name": "Release",
             "inherits": "default",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
+                "CMAKE_BUILD_TYPE": "Release",
+                "GS75_BOARD_REV2": "OFF",
+                "GS75_RGB_POWER_BENCH_TEST": "OFF",
+                "GS75_POWER_HARDWARE_VERIFIED": "OFF"
+            }
+        },
+        {
+            "name": "LegacyDebug",
+            "inherits": "Debug",
+            "cacheVariables": {
+                "GS75_BOARD_REV2": "OFF",
+                "GS75_RGB_POWER_BENCH_TEST": "OFF",
+                "GS75_POWER_HARDWARE_VERIFIED": "OFF"
+            }
+        },
+        {
+            "name": "Rev2Debug",
+            "inherits": "Debug",
+            "cacheVariables": {
+                "GS75_BOARD_REV2": "ON",
+                "GS75_RGB_POWER_BENCH_TEST": "OFF",
+                "GS75_POWER_HARDWARE_VERIFIED": "OFF"
+            }
+        },
+        {
+            "name": "Rev2Bench",
+            "inherits": "Debug",
+            "cacheVariables": {
+                "GS75_BOARD_REV2": "ON",
+                "GS75_RGB_POWER_BENCH_TEST": "ON",
+                "GS75_POWER_HARDWARE_VERIFIED": "OFF"
             }
         }
     ],
@@ -33,6 +65,18 @@
         {
             "name": "Release",
             "configurePreset": "Release"
+        },
+        {
+            "name": "LegacyDebug",
+            "configurePreset": "LegacyDebug"
+        },
+        {
+            "name": "Rev2Debug",
+            "configurePreset": "Rev2Debug"
+        },
+        {
+            "name": "Rev2Bench",
+            "configurePreset": "Rev2Bench"
         }
     ]
 }

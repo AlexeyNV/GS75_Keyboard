@@ -1,9 +1,9 @@
-# GS75 Keyboard USB Adapter вЂ” Codex Context
+# GS75 Keyboard USB Adapter — Codex Context
 
 ## Goal
 Convert the keyboard from an MSI GS75 laptop into a standalone USB keyboard using a custom STM32F411RET6 adapter board.
 
-Current development stage: the 8x18 runtime, interrupt UART RX and preceding Boot/NKRO USB implementation were hardware-validated by the user. Page 07 volume did not work in Windows. The new stage adds interface 1 Consumer Control (volume/mute) and Fn+PrintScreen SysReq while preserving interface 0. All 104 host tests and ARM clean build pass; hardware validation of these additions is pending. RGB is not implemented.
+Current development stage (2026-10-22): Board Rev.2 power diagnostics and protected dummy-load bench control are implemented and independently audited. Host tests pass; hardware validation has not started. Normal builds cannot enable +5V_RGB. Rev.2 hardware validation is pending; the INA180 A1/A3 BOM conflict must be resolved. Earlier keyboard hardware results remain historical; Consumer additions still have no new board evidence. RGB signals/drivers remain unused. See docs/HARDWARE_REV2.md, docs/POWER_MANAGEMENT.md and docs/POWER_TEST_PLAN.md.
 
 ## Hardware
 
@@ -35,7 +35,7 @@ Debug:
 - SWDIO = PA13
 - SWCLK = PA14
 - NRST connected
-- Target voltage approximately 3.2вЂ“3.3 V
+- Target voltage approximately 3.2–3.3 V
 
 UART:
 - USART1
@@ -85,8 +85,7 @@ Do not use the 40-pin RGB/backlight FPC yet.
 
 Project created with STM32CubeMX.
 Toolchain/IDE = CMake.
-Workspace root:
-D:\VScode\Nozdrin_GitHub\GS75_Keyboard
+Workspace root: repository checkout (.)
 
 Build is performed from VS Code using CMake Tools and STM32CubeCLT.
 Known-good build:
@@ -263,9 +262,10 @@ FLASH 45,656 bytes (8.71%); RAM 6,920 bytes (5.28%, includes stack/heap reservat
 Protected modules, clock, GPIO, RX, .ioc and generated CMake remain unchanged.
 The new Consumer implementation has not been flashed or measured on hardware.
 
-## Next planned stage
+## Pending hardware validation
 
-- User performs the detailed board acceptance in docs/USB_HID.md: two interfaces,
+- First validate Rev.2 with Rev2Debug and the blank docs/POWER_TEST_RECORD.md.
+- Recheck the earlier USB additions on the new board per docs/USB_HID.md: two interfaces,
   Fn+PrintScreen SysReq, Windows Consumer volume/mute, Fn/base transition ordering,
   UART overlap and USB recovery with no stuck keys.
 - Recheck interface 0 Boot/NKRO, idle, LEDs and ghost suppression; record scan and
@@ -284,3 +284,53 @@ The new Consumer implementation has not been flashed or measured on hardware.
   remain unchanged. Do not enable a duplicate Cube-generated USB stack alongside it.
   After future CubeMX regeneration, check USER CODE hooks and retained custom/vendor
   files and run all host tests plus an ARM clean build; regeneration was not run for USB.
+
+## Board Rev.2 power adaptation (2026-10-22)
+
+- Available schematic: hardware/schematics/SCH_keyboard.json (dated requested filename absent).
+- Custom power modules own PC6/PC7 TUSB GPIO inputs, PA3 ADC1_IN3, PC9 EN LOW,
+  PB4 active-low FAULT. No pin conflicts; ADC1 previously unused. RGB U4 signals
+  PB12..15/PD2/PA8/PC8 reserved but not configured. .ioc and generated GPIO unchanged.
+- Main-loop CC filter 20ms, nonblocking ADC ~100Hz, total-current diagnostics,
+  fault latch, explicit OFF/reset/bench enable. No new ISR work.
+- Existing blocking UART replies are sent in <=64-byte portions (10ms timeout),
+  servicing protection between portions. RX/USART/SysTick/HID logic unchanged.
+- Default USB policy 450mA is capped to descriptor allocation (currently 100mA);
+  stable Type-C 1.5A/3A policy ceiling 700mA. The existing USB descriptor caps
+  the effective budget to 100mA in every CC mode. No enable before configuration
+  or during suspend. TPS2553 hardware branch limit is separate from board current.
+- GS75_BOARD_REV2 defaults OFF (legacy). Rev2Debug selects diagnostics; bench gate
+  defaults OFF. Rev2Bench still needs explicit GS75_POWER_HARDWARE_VERIFIED=ON
+  after assembled A1/wiring/dummy-load checks. No automatic startup/retry enabling.
+- Commands: PWRINFO, CURRENT, PWRTEST (read-only), PWROFF, PWRON, PWRRESET.
+  Measurement values are PRELIMINARY (3300mV assumed VREF, A1 gain20).
+- Host-tested: 151 cases in 7 suites, previous 104 retained, 40 power,
+  5 UART/HID integration and 2 invalid CMake configurations. ARM clean
+  configurations LegacyDebug, Rev2Debug, Rev2Bench and Rev2BenchVerified pass
+  without warnings/errors. Rev2Debug FLASH 51,236 bytes / RAM 7,080 bytes.
+- Hardware-validated: none of this power extension. Not yet tested: ADC accuracy,
+  actual source budgets, switch response time, CC wiring and revised PCB.
+  Future work: recorded bench acceptance and independent RGB controller work.
+- Existing generated-source edits are limited to main.c and stm32f4xx_it.c
+  USER CODE hooks. matrix_debug.c is custom-owned; .ioc and generated CMake are unchanged.
+
+## Independent Rev.2 audit (2026-10-22)
+
+- See [docs/POWER_AUDIT.md](docs/POWER_AUDIT.md) for severity and exact code evidence.
+- Corrected effective budget: all CC modes clamp to active bMaxPower (100mA),
+  while 450/700mA remain source-dependent engineering policy ceilings. USB
+  descriptors are unchanged.
+- Fatal exception and Error_Handler USER CODE hooks attempt direct LOW on PC9.
+  This is best effort; there is no independent MCU-hang watchdog on EN.
+- Generic Debug/Release presets explicitly clear power gates; invalid verified/
+  bench/board combinations are rejected. Attach/detach/fault/sample counters
+  saturate instead of wrapping where applicable.
+- A stable zero ADC sample is numerically valid and may allow PWRON in an
+  acknowledged bench build. No reliable in-firmware proof of sensor continuity
+  exists. Require external meter and two known-current points before acknowledgement.
+- First board action is diagnostic Rev2Debug only, with RGB controller disconnected
+  and PC9 verified LOW. Any power-switch test uses externally limited dummy load.
+- Future hardware work: measure USB suspend input current and investigate a
+  separate USB 2.0 High-Power 500mA revision. The current descriptor and
+  firmware remain at the audited 100mA budget. Use docs/POWER_TEST_RECORD.md
+  to capture measurements; its fields are blank until board tests occur.

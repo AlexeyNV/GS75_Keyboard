@@ -6,6 +6,7 @@
 #include "usb_keyboard.h"
 #include "usb_consumer.h"
 #include "runtime_timing.h"
+#include "power_manager.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -19,7 +20,17 @@ static void Send(const char *text)
 {
     /* Main-loop only. SysTick keeps scanning and USART1 IRQ queues RX
      * during blocking transmission. Replies remain serialized. */
-    HAL_UART_Transmit(&huart1, (uint8_t *)text, (uint16_t)strlen(text), HAL_MAX_DELAY);
+    size_t remaining = strlen(text);
+    while (remaining)
+    {
+        uint16_t count = remaining > 64U ? 64U : (uint16_t)remaining;
+        PowerManager_Task(HAL_GetTick());
+        /* <=5.6ms wire time; bounded timeout services power on UART error. */
+        HAL_StatusTypeDef status = HAL_UART_Transmit(&huart1, (uint8_t *)text, count, 10U);
+        PowerManager_Task(HAL_GetTick());
+        if (status != HAL_OK) { PowerManager_Off(); return; }
+        text += count; remaining -= count;
+    }
 }
 
 static void SendGhost(const char *source, const AntiGhostState *ghost)
@@ -212,6 +223,10 @@ static void Command(void)
     else if (strcmp(rx_buffer, "USBINFO") == 0)
     {
         UsbInfo();
+    }
+    else if (PowerDebug_Command(rx_buffer, Send))
+    {
+        /* All power commands execute in main context. */
     }
     else
     {
