@@ -1,0 +1,183 @@
+{
+  "format_version": 1,
+  "created_local": "2026-10-23T13:03:59",
+  "serial": {
+    "port": "COM17",
+    "baud": 115200
+  },
+  "plan": {
+    "description": "Редактируемый план картирования клавиатуры MSI GS75. Удалите отсутствующие клавиши или добавьте свои.",
+    "keys": [
+      "Esc",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F11",
+      "F12",
+      "Print Screen",
+      "Scroll Lock",
+      "Pause Break",
+      "Insert",
+      "Delete",
+      "Page up Home",
+      "Page down END",
+      "`",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+      "-",
+      "=",
+      "Backspace",
+      "Num Lock",
+      "Numpad /",
+      "Numpad *",
+      "Numpad -",
+      "Tab",
+      "Q",
+      "W",
+      "E",
+      "R",
+      "T",
+      "Y",
+      "U",
+      "I",
+      "O",
+      "P",
+      "[",
+      "]",
+      "\\",
+      "Numpad 7 Home",
+      "Numpad 8 Up",
+      "Numpad 9 PgUp",
+      "Numpad +",
+      "Caps Lock",
+      "A",
+      "S",
+      "D",
+      "F",
+      "G",
+      "H",
+      "J",
+      "K",
+      "L",
+      ";",
+      "'",
+      "Enter",
+      "Numpad 4 Left",
+      "Numpad 5",
+      "Numpad 6 Right",
+      "Left Shift",
+      "Z",
+      "X",
+      "C",
+      "V",
+      "B",
+      "N",
+      "M",
+      ",",
+      ".",
+      "/",
+      "Right Shift",
+      "Arrow Up",
+      "Numpad 1 End",
+      "Numpad 2 Down",
+      "Numpad 3 PgDn",
+      "Numpad Enter",
+      "Left Ctrl",
+      "Fn",
+      "Left Alt",
+      "Space",
+      "|\\",
+      "Right AltGr",
+      "Win",
+      "Right Ctrl",
+      "Arrow Left",
+      "Arrow Down",
+      "Arrow Right",
+      "Numpad 0",
+      "Numpad ."
+    ],
+    "combos": [
+      [
+        "W",
+        "D"
+      ],
+      [
+        "Left Shift",
+        "A"
+      ],
+      [
+        "Left Ctrl",
+        "C"
+      ],
+      [
+        "W",
+        "S"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "Left Shift",
+        "Left Ctrl"
+      ],
+      [
+        "Left Shift",
+        "C"
+      ],
+      [
+        "Fn",
+        "Enter"
+      ],
+      [
+        "W",
+        "A",
+        "Left Shift"
+      ],
+      [
+        "Left Ctrl",
+        "Left Shift",
+        "Esc"
+      ],
+      [
+        "W",
+        "A",
+        "D"
+      ]
+    ]
+  },
+  "baseline": {
+    "edges": [],
+    "matching_samples": 10,
+    "sample_count": 10
+  },
+  "singles": {
+    "Esc": {
+      "observed_edges": [
+        "FPC21->FPC26"
+      ],
+      "active_edges": [
+        "FPC21->FPC26"
+      ],
+      "sample_count": 5,
+      "matching_samples": 5,
+      "release_confirmed": true
+    }
+  },
+  "combos": {}
+}
